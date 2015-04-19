@@ -1,0 +1,45 @@
+
+\section{Inverted indexing}
+
+\subsection{Analysis of the Data}
+We performed a detailed analysis of the data to figure out the kind of indexing technique, which needs to be used to optimize our searching time. The statistics that were extracted from the data are as follows:\\
+
+\begin{table}[ht!]
+\centering
+\caption{Statistics of Data}
+\begin{tabular}{|l|c|}
+\hline 
+Number of data points & 264016 \\ 
+Number of unique features is & 785985 \\ 
+Maximum number of features in a data point is & 1903 \\ 
+Minimum number of features in a data point is  & 7 \\ 
+Average number of features in a data point is & 270.602966 \\ 
+Maximum number of data point with a feature is & 259110 \\ 
+Minimum number of data point with a feature is & 1 \\ 
+Average number of data point with a feature is & 90
+ \\ 
+Maximum value of a feature  & 1870 \\ 
+Minimum value of a feature
+ & 1 \\ 
+Average value of a feature & 1.142210 \\ 
+Maximum number of heavy-hitters  & 144 \\ 
+Minimum number of heavy-hitters  & 1 \\ 
+ Average number of heavy-hitters  & 44.5 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+From this we can observe that the data is highly sparse with only about 271 features, on a average, in a point, as opposed to the 785985 unique features. This high sparsity makes the data set an ideal candidate to perform inverted indexing. In inverted indexing, instead of indexing the data points we would index the features. This leads to a large index structure, but we gain on the speed of point query. \\
+
+\subsection{Inverted indexing}
+
+We construct the index structure on features. Our index structure is a chain hashing structure. For a give data point to be inserted in to the structure, for each of it features, we hash the feature and insert the reference to the data point in the chain. In our current implementation we have used a hash table of size 785985, and hence we do not have any collisions. The hash table is maintained as a binary search tree. This structure results in a chain of maximum length 264016.\\
+
+\subsubsection{Point Query}
+
+Point query operation can be very effectively 
+implemented in the inverted index structure. To perform this operation we maintain a list of candidate nodes, which needs to be explored sequentially. Our aim is to prune the candidate list as much as possible. This pruning is done by the following observation.\\
+Given a point $p$ we look at all its features, and find the list of all nodes associated with the features. It is a straight forward observation that $p$ is present in the dataset only if, it is in the intersection of all the associated point list. This reduces our candidate list to a size, atleast as small as the smallest list, among all the features present in $p$ (which in our case is on an average only 271).\\
+
+\subsubsection{Range Query and K-nn}
+Range query and K-nn are much more complicated queries, when compared to a point query. The candidate set in this case is much more diverse and distributed. For example the candidate set for a Range query will be the union of all the point lists associated with the features of $p$, which is the worst case is of the order of $N$. We try to prune this by observing that the minimum number of features in a point is 7, hence we can remove the top 6 features from the index with out affecting the accuracy of searching. But this pruning does not result in any improvement in performance. We shall discuss this further the sections below.\\

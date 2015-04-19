@@ -1,0 +1,14 @@
+\section{Similarity measure}
+
+As mentioned in the earlier section the main challenge is the fact that we are dealing with non binary fingerprints which has seen very little work. Many of the papers mentioned in the related work suggest that their technique can be extended to non-binary fingerprints but fail to provide any experimental evaluation nor any details about the similarity measure used. We will be using a generalization of the Tanimoto similarity measure to incorporate non binary feature values. The similarity measure known as Min-Max similarity measure $M_s$ between two fingerprints X, Y can be formulated as, where $X_i$ is the $i_{th}$ feature value of X \[ M_s(X,Y) = \frac{\sum \limits_{i} min(X_i, Y_i)}{\sum \limits_{i} max(X_i, Y_i)}\]
+
+If the fingerprints are binary, this similarity measure reduces to the Tanimoto similarity. We need to ensure that the corresponding distance measure $M_d=1- M_s$is a metric. We can write the distance measure as: 
+
+\[ M_d(X,Y) = 1- M_s(X,Y) = 1- \frac{\sum \limits_{i} min(X_i, Y_i)}{\sum \limits_{i} max(X_i, Y_i)}\]
+\[ M_d(X,Y)= \frac{\sum \limits_{i} |X_i - Y_i|}{\sum \limits_{i} max(X_i, Y_i)}\]
+
+We can easily see that $M_d(X,X)=0$ and that if $M_d(X,Y)=0 $ it implies $X_i = Y_i$ for all i, hence implying X=Y. The triangle inequality has been proved in \citet*{lipkus1999proof}\\
+
+
+
+

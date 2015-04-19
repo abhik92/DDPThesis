@@ -1,0 +1,19 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Indexing time (in ms): As seen in the figure indexing time is increasing almost linearly with increase in the number of pivots chosen at each step of the M-tree algorithm. Even though indexing is an offline process we do not want the indexing time to run into days. If indexing time is very high, updates to the chemical compound database would be very expensive since we need a red-indexing into the chemical database. Hence we need to have a threshold for indexing time. The threshold distance used for this experiment was 0.3\relax }}{16}{figure.caption.6}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Comparisons: As seen in the figure, the number of comparisons i.e. the number of leaves containing chemical compounds which are visited in the M-tree index can be seen to decrease with increase in the number of pivots. We can notice that for number of pivots chosen as 2000, we are able to prune away more than half the nodes in the M-tree . The threshold distance used for this experiment was 0.3\relax }}{16}{figure.caption.7}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Query time (in ms): As seen in the figure, the query time can be seen to decrease with increase in the number of pivots. For pivot set size of 2000 we are able to achieve more than 2-times speedup. The linear scan be seen to take about 3100 ms per compound our technique can be seen to take around 1500ms per second for the specific size of 2000 pivots.The threshold distance used for this experiment was 0.3\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Comparisons: The figure shows the number of comparisons made when different threshold values are used as similarity cutoff. As noticed in the figure, for lower values of threshold , pruning can be applied to more than 90 percent of the nodes . As the threshold reaches 0.5 very little pruning occurs.\relax }}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Query time (in ms): The figure shows the query time when different threshold values are used as similarity cutoff. As can be seen in the figure, for lower values of threshold almost 15 times speedup can be achieved though for threshold values close to 0.5 the query time increases and becomes comparable to the linear scan query time.\relax }}{18}{figure.caption.10}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces All pair distances\relax }}{22}{figure.caption.15}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Distance of the closest point\relax }}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Feature distribution\relax }}{23}{figure.caption.17}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,20 @@
+\section{Experiments - Inverted Indexing}
+The results of point query experiments are as follows\\
+
+\begin{table}[ht!]
+\centering
+\caption{Point query}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Data size & \multicolumn{2}{c|}{Avg points explored} & \multicolumn{2}{c|}{Avg Time (sec)}\\ 
+ & Inverted & linear & Inverted & linear \\ 
+\hline 
+1000 & 6.87 & 727.6 & 0.02 & 0.764 \\ 
+10000 & 54.57 & 7277.67 & 0.1 & 9.76 \\ 
+100000 & 334.37 & 73008.21 & 0.5 & 83.09 \\ 
+FULL & 1972.75 & 83886.07 & 2.32 & 225.68 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+As can be seen our technique is able to achieve up to 100 fold improvement over the linear scan. This was made possible by the pruning that was possible on this dataset. Column 2 and 3 give us a insight into the amount of pruning that was achieved by this technique. We are able to achieve up to 80 times more pruning.
