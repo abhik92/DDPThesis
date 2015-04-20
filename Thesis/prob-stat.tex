@@ -6,7 +6,7 @@ As the title suggests we are interested in fast indexing and searching of chemic
 We are looking at accurate searching of similar compounds when given a query compound. The similarity of chemical fingerprints is established using the Min-Max distance which is the generalization of Tanimoto distance for non-binary datasets (explained in the next section). We are dealing with exact similarity match and not approximate similarity . We will be looking at different types of queries, namely the range, point and top-k queries .\\
 
 Range queries are of the form , where given a fingerprint, say {\textit{f}, and a threshold similarity \textbf{$\theta$} we want to find the set $S$ of all fingerprints, such that 
-\[ sim(f,g)~ > ~\theta ~~ \Rightarrow  \textbf{$g\in S$} \] \\
+\[ sim(f,g)~ > ~\theta ~~ \Rightarrow  \textbf{$g\in S$} \] 
 
 Top k search queries would require us to find the top k most similar compounds to the query compound. Given a fingerprint, say \textit{f} and a value \textit{k},we want to find the Set $S$ of size k such that 
 \[ sim(f,g) \geq sim(f,h) ~~\forall g \in S ,~\forall h \notin S \] . We haven't looked at these search queries in the experiments as of yet but plan to explore this area in the future.\\

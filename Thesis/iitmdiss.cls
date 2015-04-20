@@ -188,10 +188,13 @@ footskip=30pt,bottom=1in]{geometry}
            {\bf \large\MakeUppercase{\@author}\par\par}
            \vskip 5ex%
            {\normalsize \em in partial fulfilment of the requirements\par
-             for the award of the degree of \par}
+             for the award of the degrees of \par}
            \vskip 5ex%
            \if@MTech
+             {\bf BACHELOR OF TECHNOLOGY}
+             {\bf \\ \& \\ }
              {\bf MASTER OF TECHNOLOGY}
+                          
            \fi
            \if@BTech
               {\bf BACHELOR OF TECHNOLOGY}

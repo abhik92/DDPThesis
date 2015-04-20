@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.15)  20 APR 2015 02:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.14)  20 APR 2015 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,8 +409,11 @@ Package: complexity 11/24/06  v0.77
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/complexity/mycomplexity.sty))
-(./algo.sty
+
+Package complexity Warning: User Defined Commands file `mycomplexity.sty' not f
+ound, it will not be loaded. on input line 756.
+
+) (./algo.sty
 Package: algo 1996/02/12 v1.2 LaTeX2e package for pseudo code
 
 Package: `algo' v1.2 for pseudo code
@@ -556,7 +559,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
- <iitm.pdf, id=148, 333.245pt x 333.245pt>
+ <iitm.pdf, id=56, 333.245pt x 333.245pt>
 File: iitm.pdf Graphic file (type pdf)
 
 <use iitm.pdf>
@@ -583,53 +586,53 @@ l.98 \acknowledgements
 ] [2
 
 ]) (./thesis.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3
-
-])
+))
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [4]
-(./thesis.lot)
+ [3
+
+] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [5
+
+[4
 
 ] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [6
+ [5
 
 ]
 CHAPTER 1.
 (./introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
@@ -638,29 +641,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 ]
 
 Package natbib Warning: Citation `willett2006similarity' on page 2 undefined on
- input line 20.
+ input line 19.
 
 
 Package natbib Warning: Citation `swamidass2007bounds' on page 2 undefined on i
-nput line 20.
+nput line 19.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
 [2]
 
 Package natbib Warning: Citation `ciaccia1997indexing' on page 3 undefined on i
-nput line 25.
+nput line 24.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
@@ -669,35 +672,34 @@ CHAPTER 2.
 (./related-work.tex
 
 Package natbib Warning: Citation `aung2010indexing' on page 4 undefined on inpu
-t line 3.
+t line 2.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
 
 Package natbib Warning: Citation `swamidass2007bounds' on page 4 undefined on i
-nput line 5.
+nput line 4.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Package natbib Warning: Citation `nasr2010hashing' on page 4 undefined on input
+ line 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
 [4
 
-]
-
-Package natbib Warning: Citation `nasr2010hashing' on page 5 undefined on input
- line 7.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-) [5]
+]) [5]
 CHAPTER 3.
 (./prob-stat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -710,266 +712,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
 [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
 
 Package natbib Warning: Citation `swamidass2007bounds' on page 7 undefined on i
 nput line 16.
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 16--140
+) (./sim.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--1
 
  []
 
-[7]
-CHAPTER 4.
-(./sim.tex
 
-Package natbib Warning: Citation `lipkus1999proof' on page 8 undefined on input
+Package natbib Warning: Citation `lipkus1999proof' on page 7 undefined on input
  line 10.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-) [8
-
-]
-CHAPTER 5.
-(./m-tree.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+) [7]
+CHAPTER 4.
+(./Data.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-
- []
-
-Missing character: There is no â in font cmr10!
-Missing character: There is no ‰ in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-[9
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[10]
+[8
+
+] <img/all.jpg, id=155, 481.8pt x 361.35pt>
+File: img/all.jpg Graphic file (type jpg)
+ <use img/all.jpg>
+Package pdftex.def Info: img/all.jpg used on input line 35.
+(pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
+
+<img/min.jpg, id=156, 481.8pt x 361.35pt>
+File: img/min.jpg Graphic file (type jpg)
+ <use img/min.jpg>
+Package pdftex.def Info: img/min.jpg used on input line 41.
+(pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
+
+<img/feature.jpg, id=157, 481.8pt x 361.35pt>
+File: img/feature.jpg Graphic file (type jpg)
+ <use img/feature.jpg>
+Package pdftex.def Info: img/feature.jpg used on input line 47.
+(pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
+ [9 <./img/all.jpg> <./img/min.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Package natbib Warning: Citation `metwally2005efficient' on page 10 undefined o
+n input line 64.
 
- []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-) [14]
-CHAPTER 6.
-(./mtree-exp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-<img/indexing_time_n200k_d3_diffpivots.jpg, id=371, 513.92pt x 385.44pt>
-File: img/indexing_time_n200k_d3_diffpivots.jpg Graphic file (type jpg)
-
-<use img/indexing_time_n200k_d3_diffpivots.jpg>
-Package pdftex.def Info: img/indexing_time_n200k_d3_diffpivots.jpg used on inpu
-t line 21.
-(pdftex.def)             Requested size: 158.54152pt x 118.90878pt.
-
-<img/comparisons_n200k_d3_diffpivots.jpg, id=372, 513.92pt x 385.44pt>
-File: img/comparisons_n200k_d3_diffpivots.jpg Graphic file (type jpg)
-
-<use img/comparisons_n200k_d3_diffpivots.jpg>
-Package pdftex.def Info: img/comparisons_n200k_d3_diffpivots.jpg used on input 
-line 28.
-(pdftex.def)             Requested size: 158.54152pt x 118.90878pt.
-
-<img/query_time_n200k_d3_diffpivots.jpg, id=373, 513.92pt x 385.44pt>
-File: img/query_time_n200k_d3_diffpivots.jpg Graphic file (type jpg)
-
-<use img/query_time_n200k_d3_diffpivots.jpg>
-Package pdftex.def Info: img/query_time_n200k_d3_diffpivots.jpg used on input l
-ine 34.
-(pdftex.def)             Requested size: 158.54152pt x 118.90878pt.
- [15
-
-]
-
-LaTeX Warning: Text page 16 contains only floats.
-
-[16 <./img/indexing_time_n200k_d3_diffpivots.jpg> <./img/comparisons_n200k_d3_d
-iffpivots.jpg> <./img/query_time_n200k_d3_diffpivots.jpg>]
-<img/comparisons_100k_500p_100o_differentdist.jpg, id=385, 513.92pt x 385.44pt>
-File: img/comparisons_100k_500p_100o_differentdist.jpg Graphic file (type jpg)
-<use img/comparisons_100k_500p_100o_differentdist.jpg>
-Package pdftex.def Info: img/comparisons_100k_500p_100o_differentdist.jpg used 
-on input line 49.
-(pdftex.def)             Requested size: 158.54152pt x 118.90878pt.
-
-<img/query_time_100k_500p_100o_differentdist.jpg, id=386, 513.92pt x 385.44pt>
-File: img/query_time_100k_500p_100o_differentdist.jpg Graphic file (type jpg)
-
-<use img/query_time_100k_500p_100o_differentdist.jpg>
-Package pdftex.def Info: img/query_time_100k_500p_100o_differentdist.jpg used o
-n input line 55.
-(pdftex.def)             Requested size: 158.54152pt x 118.90878pt.
-) [17 <./img/comparisons_100k_500p_100o_differentdist.jpg>] [18 <./img/query_ti
-me_100k_500p_100o_differentdist.jpg>]
-CHAPTER 7.
-(./invert.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-[19
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 40--43
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 45--152
-
- []
-
-[20]
-CHAPTER 8.
-(./point-exp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
-
- []
-
-) [21
-
-]
-CHAPTER 9.
-(./data.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
-
- []
-
-<img/all.jpg, id=411, 481.8pt x 361.35pt>
-File: img/all.jpg Graphic file (type jpg)
- <use img/all.jpg>
-Package pdftex.def Info: img/all.jpg used on input line 6.
-(pdftex.def)             Requested size: 158.54152pt x 118.904pt.
-
-<img/min.jpg, id=412, 481.8pt x 361.35pt>
-File: img/min.jpg Graphic file (type jpg)
- <use img/min.jpg>
-Package pdftex.def Info: img/min.jpg used on input line 12.
-(pdftex.def)             Requested size: 158.54152pt x 118.904pt.
-
-<img/feature.jpg, id=413, 481.8pt x 361.35pt>
-File: img/feature.jpg Graphic file (type jpg)
- <use img/feature.jpg>
-Package pdftex.def Info: img/feature.jpg used on input line 18.
-(pdftex.def)             Requested size: 158.54152pt x 118.904pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-[22
-
- <./img/all.jpg> <./img/min.jpg>]
-
-Package natbib Warning: Citation `metwally2005efficient' on page 23 undefined o
-n input line 37.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
-
- []
-
-) [23 <./img/feature.jpg>]
-CHAPTER 10.
-(./conc.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-) [24
-
-]
-CHAPTER 11.
-[25
+[10 <./img/feature.jpg>]) [11]
+CHAPTER 5.
+(./Experiment.tex) [12
 
 ] (./thesis.bbl
 
@@ -979,45 +824,43 @@ Package natbib Warning: Empty `thebibliography' environment on input line 7.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
-[26
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
+[13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 11EAC901EF7F19C26F761ACB3EB8EFB1;2322.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+(rerunfilecheck)             Checksum: 68A5B58C4AF54CEB24C5833D1DD2BC26;715.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10112 strings out of 494985
- 143257 string characters out of 6180356
- 244527 words of memory out of 5000000
- 13004 multiletter control sequences out of 15000+600000
+ 9962 strings out of 494985
+ 140667 string characters out of 6180356
+ 241539 words of memory out of 5000000
+ 12960 multiletter control sequences out of 15000+600000
  22337 words of font info for 54 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 43i,9n,40p,1447b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,8n,40p,1447b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (34 pages, 386477 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (20 pages, 243811 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 448 compressed objects within 5 object streams
- 131 named destinations out of 1000 (max. 500000)
- 334 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
