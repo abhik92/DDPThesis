@@ -11,3 +11,5 @@
 \BOOKMARK [1][-]{section.4.1}{A Typical Fingerprint Dataset Analysis}{chapter.4}% 11
 \BOOKMARK [1][-]{section.4.2}{Observations on the Data}{chapter.4}% 12
 \BOOKMARK [0][-]{chapter.5}{Experiments}{}% 13
+\BOOKMARK [1][-]{section.5.1}{M-tree Indexing analysis}{chapter.5}% 14
+\BOOKMARK [2][-]{subsection.5.1.1}{Limiting Outlier Set Size }{section.5.1}% 15

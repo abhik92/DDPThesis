@@ -93,7 +93,7 @@ footskip=30pt,bottom=1in]{geometry}
 \RequirePackage{atbeginend} % used to redefine the list environs
 \setstretch{1.5}
 %\setstretch{1.8}
-
+%
 \BeforeBegin{itemize}{\vspace*{-5ex}\begin{singlespace}}
 \AfterEnd{itemize}{\end{singlespace}}
 

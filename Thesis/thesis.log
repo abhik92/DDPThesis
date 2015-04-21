@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.14)  20 APR 2015 17:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.14)  21 APR 2015 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,7 +559,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
- <iitm.pdf, id=56, 333.245pt x 333.245pt>
+ <iitm.pdf, id=64, 333.245pt x 333.245pt>
 File: iitm.pdf Graphic file (type pdf)
 
 <use iitm.pdf>
@@ -717,22 +717,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Package natbib Warning: Citation `swamidass2007bounds' on page 6 undefined on i
+nput line 14.
+
+) (./sim.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--1
 
  []
 
 [6
 
 ]
-
-Package natbib Warning: Citation `swamidass2007bounds' on page 7 undefined on i
-nput line 16.
-
-) (./sim.tex
-Underfull \hbox (badness 10000) in paragraph at lines 16--1
-
- []
-
 
 Package natbib Warning: Citation `lipkus1999proof' on page 7 undefined on input
  line 10.
@@ -756,19 +751,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
 [8
 
-] <img/all.jpg, id=155, 481.8pt x 361.35pt>
+] <img/all.jpg, id=186, 481.8pt x 361.35pt>
 File: img/all.jpg Graphic file (type jpg)
  <use img/all.jpg>
 Package pdftex.def Info: img/all.jpg used on input line 35.
 (pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
 
-<img/min.jpg, id=156, 481.8pt x 361.35pt>
+<img/min.jpg, id=187, 481.8pt x 361.35pt>
 File: img/min.jpg Graphic file (type jpg)
  <use img/min.jpg>
 Package pdftex.def Info: img/min.jpg used on input line 41.
 (pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
 
-<img/feature.jpg, id=157, 481.8pt x 361.35pt>
+<img/feature.jpg, id=188, 481.8pt x 361.35pt>
 File: img/feature.jpg Graphic file (type jpg)
  <use img/feature.jpg>
 Package pdftex.def Info: img/feature.jpg used on input line 47.
@@ -814,9 +809,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
 [10 <./img/feature.jpg>]) [11]
 CHAPTER 5.
-(./Experiment.tex) [12
+(./Experiment.tex
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
-] (./thesis.bbl
+ []
+
+<img/image1.jpg, id=207, 678.535pt x 315.1775pt>
+File: img/image1.jpg Graphic file (type jpg)
+ <use img/image1.jpg>
+Package pdftex.def Info: img/image1.jpg used on input line 24.
+(pdftex.def)             Requested size: 452.9679pt x 210.39835pt.
+
+<img/image8.jpg, id=208, 607.26875pt x 341.275pt>
+File: img/image8.jpg Graphic file (type jpg)
+ <use img/image8.jpg>
+Package pdftex.def Info: img/image8.jpg used on input line 36.
+(pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
+ [12
+
+]
+<img/image2.jpg, id=217, 684.5575pt x 348.30125pt>
+File: img/image2.jpg Graphic file (type jpg)
+ <use img/image2.jpg>
+Package pdftex.def Info: img/image2.jpg used on input line 45.
+(pdftex.def)             Requested size: 452.9679pt x 230.47478pt.
+
+<img/image3.jpg, id=218, 607.26875pt x 377.41pt>
+File: img/image3.jpg Graphic file (type jpg)
+ <use img/image3.jpg>
+Package pdftex.def Info: img/image3.jpg used on input line 53.
+(pdftex.def)             Requested size: 452.9679pt x 281.5192pt.
+
+<img/image4.jpg, id=219, 683.55376pt x 340.27126pt>
+File: img/image4.jpg Graphic file (type jpg)
+ <use img/image4.jpg>
+Package pdftex.def Info: img/image4.jpg used on input line 61.
+(pdftex.def)             Requested size: 452.9679pt x 225.48833pt.
+
+<img/image5.jpg, id=220, 607.26875pt x 341.275pt>
+File: img/image5.jpg Graphic file (type jpg)
+ <use img/image5.jpg>
+Package pdftex.def Info: img/image5.jpg used on input line 70.
+(pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
+
+<img/image6.jpg, id=221, 607.26875pt x 341.275pt>
+File: img/image6.jpg Graphic file (type jpg)
+ <use img/image6.jpg>
+Package pdftex.def Info: img/image6.jpg used on input line 79.
+(pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
+
+<img/image7.jpg, id=222, 607.26875pt x 341.275pt>
+File: img/image7.jpg Graphic file (type jpg)
+ <use img/image7.jpg>
+Package pdftex.def Info: img/image7.jpg used on input line 88.
+(pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
+)
+[13 <./img/image1.jpg>] (./thesis.bbl [14 <./img/image8.jpg> <./img/image2.jpg>
+] [15 <./img/image3.jpg> <./img/image4.jpg>] [16 <./img/image5.jpg> <./img/imag
+e6.jpg>] [17 <./img/image7.jpg>]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 7.
 
@@ -825,7 +875,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 7.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-[13
+[18
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
@@ -833,7 +883,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 68A5B58C4AF54CEB24C5833D1DD2BC26;715.
+(rerunfilecheck)             Checksum: 230BA159079EC2CFA13AD285E4B5D2E0;866.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  )
 (\end occurred inside a group at level 1)
@@ -841,10 +891,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
 ### simple group (level 1) entered at line 8 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9962 strings out of 494985
- 140667 string characters out of 6180356
- 241539 words of memory out of 5000000
- 12960 multiletter control sequences out of 15000+600000
+ 10030 strings out of 494985
+ 141667 string characters out of 6180356
+ 242472 words of memory out of 5000000
+ 13002 multiletter control sequences out of 15000+600000
  22337 words of font info for 54 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  43i,8n,40p,1447b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -857,10 +907,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (20 pages, 243811 bytes).
+Output written on thesis.pdf (25 pages, 458453 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

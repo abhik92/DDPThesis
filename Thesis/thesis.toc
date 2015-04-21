@@ -11,3 +11,5 @@
 \contentsline {section}{\numberline {4.1}A Typical Fingerprint Dataset Analysis}{8}{section.4.1}
 \contentsline {section}{\numberline {4.2}Observations on the Data}{10}{section.4.2}
 \contentsline {chapter}{\numberline {5}Experiments}{12}{chapter.5}
+\contentsline {section}{\numberline {5.1}M-tree Indexing analysis}{12}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Limiting Outlier Set Size }{13}{subsection.5.1.1}
