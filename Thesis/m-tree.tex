@@ -1,6 +1,4 @@
-\section{M-tree Based indexing}
 
-\subsection{M-tree Data Structure}
 
 M-tree also known as the Metric tree is a tree data structure constructed using a metric distance measure and relies on the triangle inequality for efficient range search queries. Similar to all other tree data structures, an M-tree data structure also has Leaf Nodes and non- Leaf nodes. Every non leaf node has a pointer to its parent node, a pointer to its subtree, its object information and a covering radius denoting maximum distance of a node to any node in its subtree.Every leaf node keeps a pointer to its parent and object information.\\
 
@@ -10,7 +8,7 @@ in some leaf node.  $O_j$ stores the object information, mainly the data point f
 A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a subtree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a subtree rooted at router object $O_r$ is at atmost $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
 
 
-\subsection{Information in the data structure}
+\section{Information in the data structure}
 
 We use a modified data structure similar to the M-tree.We keep the following information in each node of the our modified M-tree: the object identifier of the pivot, i.e fingerprint information of the pivot fingerprint; the pivot also stores a pointer to its children i.e a pointer to a set of fingerprints; a double value which is the distance of the farthest child in its subtree and a boolean value which signifies if the pivot is an outlier pivot. We do not require a parent pointer. And the size of each node is determined by the number of pivots chosen at each step of our indexing technique and the base outlier size limit, which are explained later. The following information is stored in each entry of a node in our tree:
 
@@ -21,7 +19,7 @@ We use a modified data structure similar to the M-tree.We keep the following inf
 	\item Outlier pivot boolean variable
 \end{enumerate}
 
-\subsection{Baseline Indexing approach}
+\section{Baseline Indexing approach}
 In the baseline approach, we are partitioning the dataset into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
 
 \begin{enumerate}
@@ -43,6 +41,8 @@ In the baseline approach, we are partitioning the dataset into groups using pivo
 \end{enumerate}
 
 
+\section{Alternate indexing approach}
+
 We tried an alternate approach where instead of choosing outliers after assigning molecules the most similar pivot we recursively apply the technique on each set. In simpler words, we try to cluster at each step and try to create clusters among each cluster recursively. So in each cluster we choose pivots again and try to assign each of the points to the pivots until we cannot choose more pivots. We can formally explain it as follows.
 
 
@@ -62,7 +62,7 @@ The previous indexing technique was seen to give us better results. Hence we wil
 
 
 
-\subsection{Choosing pivot}
+\section{Choosing pivot}
 
 Instead of randomly choosing pivots at every step we use a Max-Min distance approach where we try to maximize the minimum distance between any two pivot nodes chosen. The procedure can be explained as below:
 
@@ -81,7 +81,7 @@ We can observe that this is a very expensive procedure since we are scanning the
 
 We use a sampling technique where we randomly sample a subset of the database and apply the technique described above on the subset. We used a subset size of $\frac{1}{10^{th}}$ the size of the database, approximately about 20,000 points in the subset.
 
-\subsection{Range Search Querying}
+\section{Range Search Querying}
 
 Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find the set of chemical fingerprints which satisfy the query. We exploit the triangle inequality for the same. The procedure for range search querying can be described by the following steps\\
 
@@ -104,7 +104,7 @@ Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find
 
 
 
-\subsection{Lipschitz Embedding}
+\section{Lipschitz Embedding}
 
 The performance of the M-tree is limited by the fact that the data is very sparse. This results in very loose clusters being formed during the indexing phase. To improve upon this we performed an embedding of the data into Euclidean space using Lipschitz embedding. Lipshcitz embedding results in a contractive mapping.\\
 
@@ -135,4 +135,4 @@ a database D with metric distance d onto a k-dimensional feature vector space. T
 	\item Repeat step 3-4 until Reference set is full\\
 \end{enumerate}
 
-The dimension of the embedded space was chosen to be 514, which is the square root of the total number of points in the data set.We then performed M-tree based indexing and searching on this dataset. Our performance had deteriorated from that of the baseline technique. In later section we shall give a reasoning for this deterioration.
+The dimension of the embedded space for the Swamidass dataset was chosen to be 514, which is the square root of the total number of points in the data set.We then performed M-tree based indexing and searching on this dataset. Our performance had deteriorated from that of the baseline technique. In later section we shall give a reasoning for this deterioration.

@@ -2,15 +2,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces All pair distances\relax }}{9}{figure.caption.7}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Distance of the closest point\relax }}{9}{figure.caption.8}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Feature distribution\relax }}{10}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of base outlier set\relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Indexing time versus different sizes of base limiting outlier set\relax }}{14}{figure.caption.11}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{14}{figure.caption.12}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{15}{figure.caption.13}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{15}{figure.caption.14}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Average Range Search Query time versus various sizes of pivot set for different theshold distances\relax }}{16}{figure.caption.15}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Indexing time versus dataset size\relax }}{16}{figure.caption.16}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Indexing time versus different sizes of pivot set size\relax }}{17}{figure.caption.17}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces All pair distances\relax }}{18}{figure.caption.7}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Distance of the closest point\relax }}{18}{figure.caption.8}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Feature distribution\relax }}{19}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of base outlier set\relax }}{22}{figure.caption.10}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Indexing time versus different sizes of base limiting outlier set\relax }}{23}{figure.caption.11}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{23}{figure.caption.12}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{24}{figure.caption.13}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{24}{figure.caption.14}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Average Range Search Query time versus various sizes of pivot set for different theshold distances\relax }}{25}{figure.caption.15}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Indexing time versus dataset size\relax }}{25}{figure.caption.16}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Indexing time versus different sizes of pivot set size\relax }}{26}{figure.caption.17}
