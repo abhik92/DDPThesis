@@ -22,11 +22,24 @@ We use a modified data structure similar to the M-tree.We keep the following inf
 \section{Baseline Indexing approach}
 In the baseline approach, we are partitioning the dataset into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
 
+\begin{figure}[ht]	
+\centering
+\includegraphics[width=0.7 \columnwidth]{img/image0a.jpg}
+\caption{Assigning points to a cluster after the pivoting step of the M-tree indexing process}
+\label{fig:4.1}
+\end{figure}
+
+\begin{figure}[ht]	
+\centering
+\includegraphics[width=0.7 \columnwidth]{img/image0b.jpg}
+\caption{Finding the outlier set in the M-tree index structure}
+\label{fig:4.2}
+\end{figure}
 \begin{enumerate}
 
 \item Choose the given number of random pivots from the set. The number of random pivots chosen at this step is a parameter to our experiment and has been varied across different values.
 
-\item After choosing pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots. A chemical compound is assigned to the pivot which is nearest in distance to it i.e. it has the highest Min-Max similarity with that as compared to other pivots.
+\item After choosing pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots. A chemical compound is assigned to the pivot which is nearest in distance to it i.e. it has the highest Min-Max similarity with that as compared to other pivots . This is described in \autoref{fig:4.1}.
 
 \item The next step involves ranking all chemical compounds data points by their similarity to their own closest pivot. 
 
@@ -34,7 +47,7 @@ In the baseline approach, we are partitioning the dataset into groups using pivo
 
 \item All the chemical compounds with similarity less than the cut-off similarity is called as outliers in this step
 
-\item The outliers are unassigned from the pivots and assigned to the "outlier" pivot
+\item The outliers are unassigned from the pivots and assigned to the "outlier" pivot. This has been described in \autoref{fig:4.2}
 
 \item We recursively apply this technique on the outlier set until the outlier set size reaches a base limit which is also a parameter to our algorithm.\\
 
@@ -80,6 +93,25 @@ We can observe that this is a very expensive procedure since we are scanning the
 	\[T(n)=O(n^3)\]
 
 We use a sampling technique where we randomly sample a subset of the database and apply the technique described above on the subset. We used a subset size of $\frac{1}{10^{th}}$ the size of the database, approximately about 20,000 points in the subset.
+
+
+\begin{figure}[ht!]	
+\centering
+\includegraphics[width=1 \columnwidth]{img/image0d.jpg}
+\caption{M-tree tree structure Step 1}
+\label{fig: step1}
+\end{figure}
+
+
+\begin{figure}[ht!]	
+\centering
+\includegraphics[width=1 \columnwidth]{img/image0e.jpg}
+\caption{M-tree tree structure - After final step}
+\label{fig: final step}
+\end{figure}
+
+
+
 
 \section{Range Search Querying}
 

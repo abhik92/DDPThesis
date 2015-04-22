@@ -2,17 +2,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Assigning points to a cluster after the pivoting step of the M-tree indexing process\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Finding the outlier set in the M-tree index structure\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces M-tree tree structure Step 1\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces M-tree tree structure - After final step\relax }}{13}{figure.caption.9}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Inverted Indexing Procedure Diagram\relax }}{17}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces All pair distances\relax }}{18}{figure.caption.7}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Distance of the closest point\relax }}{18}{figure.caption.8}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Feature distribution\relax }}{19}{figure.caption.9}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces All pair distances\relax }}{20}{figure.caption.12}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Distance of the closest point\relax }}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Feature distribution\relax }}{21}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of base outlier set\relax }}{22}{figure.caption.10}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Indexing time versus different sizes of base limiting outlier set\relax }}{23}{figure.caption.11}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{23}{figure.caption.12}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{24}{figure.caption.13}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{24}{figure.caption.14}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Average Range Search Query time versus various sizes of pivot set for different theshold distances\relax }}{25}{figure.caption.15}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Indexing time versus dataset size\relax }}{25}{figure.caption.16}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Indexing time versus different sizes of pivot set size\relax }}{26}{figure.caption.17}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of base outlier set\relax }}{24}{figure.caption.15}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Indexing time versus different sizes of base limiting outlier set\relax }}{25}{figure.caption.16}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{25}{figure.caption.17}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{26}{figure.caption.19}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Indexing time versus different sizes of pivot set size\relax }}{27}{figure.caption.20}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Average Range Search Query time versus various sizes of pivot set for different theshold distances\relax }}{28}{figure.caption.21}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Indexing time versus dataset size\relax }}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces \relax }}{29}{figure.caption.23}

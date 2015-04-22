@@ -13,8 +13,6 @@ For evaluation purposes we implemented a linear brute force scan to compute the 
 
 \subsection{Limiting Outlier Set Size }
 
-It is the Minimum limiting size of the outlier set allowed (o). When the outlier set size falls below this limit, we terminate the indexing process.
-
 \begin{figure}[ht]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image1.jpg}
@@ -22,76 +20,98 @@ It is the Minimum limiting size of the outlier set allowed (o). When the outlier
 \label{fig:5.1}
 \end{figure}
 
-As seen in \ref{fig:5.1} we can observe that the range search query time is almost constant with change in number of limiting outlier set size. We observed that the outlier base size did not have a significant effect on the query time for range search or on the number of comparisons. The indexing time increases with a lesser outlier base size because the depth of the M-tree increases . The algorithm is applied recursively on the outlier sets, hence when we have a lower base size limit for the outlier sets the number of times the recursion is applied is greater. Since we did not see a great change in query time or number of comparisons we have fixed the size the outlier size limit to 1/100th of the dataset size for all the future experiments described below.
-\begin{figure}[ht]	
+Just to recap, it is the Minimum limiting size of the outlier set allowed (o). When the outlier set size falls below this limit, we terminate the indexing process.
+
+As seen in \ref{fig:5.1} we can observe that the range search query time is almost constant with change in number of limiting outlier set size. We observed that the outlier base size did not have a significant effect on the query time for range search or on the number of comparisons. The indexing time increases with a lesser outlier base size because the depth of the M-tree increases . The algorithm is applied recursively on the outlier sets, hence when we have a lower base size limit for the outlier sets the number of times the recursion is applied is greater. Since we did not see a great change in query time or number of comparisons we have fixed the size the outlier size limit to 1/100th of the dataset size for all the future experiments.
+
+
+\begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image8.jpg}
 \caption{Indexing time versus different sizes of base limiting outlier set}
 \label{fig:5.2}
 \end{figure}
-\begin{enumerate}
 
-	\item No. of random pivots chosen at each step of the indexing process (p). \textit{p} determines the number of nodes at every level of the index structure. The number of nodes at each level is equal to p+1.
 
-	\item The range query distance threshold (t)	is thse cutoff used for determining similarity.\\
-\end{enumerate}
+Ideally, indexing time should decrease with increase in number of limiting outlier size. This is because the depth of the M-tree grows with increase in the limitng size of the outlier set. The indexing process is a recursive procedure and termination occurs only when the size of the outlier set falls below the given limiting size. Hence in normal circumstances the indexing time must decrease as we increase the limiting size, but as seen in \autoref{fig:5.2} the decrease is minimal and changing \textit{o} doesn't change the indexing time much. 
+
+
 
 
 
 
 \subsection{Pivot Set size}
+The pivot set size as described earlier is the number of random pivots chosen at each step of the indexing process (p). \textit{p} determines the number of nodes at every level of the index structure. The number of nodes at each level is equal to p+1.
 
-\subsection{Threshold Distance}
+\autoref{fig:5.3},\autoref{fig:5.4},\autoref{fig:5.5}  show how the range search query time varies versus different distance threshold for different sizes of the pivot set for databases of size 1,000 , 10,000 and 100,000 compounds respectively. We can observe the time is almost similar at high threshold values for different number of pivots. For low theshold values we are succesfully able to prune away all many nodes using triangle inequality. Ideally 
 
-\begin{figure}[ht]	
+
+\begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image2.jpg}
 \caption{Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database}
-\label{fig:5.2a}
-\end{figure}
-
-
-\begin{figure}[ht]	
-\centering
-\includegraphics[width=1 \columnwidth]{img/image3.jpg}
-\caption{Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database}
 \label{fig:5.3}
 \end{figure}
 
 
-\begin{figure}[ht]	
+\begin{figure}[ht!]	
 \centering
-\includegraphics[width=1 \columnwidth]{img/image4.jpg}
-\caption{Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database}
+\includegraphics[width=1 \columnwidth]{img/image3.jpg}
+\caption{Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database}
 \label{fig:5.4}
 \end{figure}
 
 
-
-\begin{figure}[ht]	
+\begin{figure}[ht!]	
 \centering
-\includegraphics[width=1 \columnwidth]{img/image5.jpg}
-\caption{Average Range Search Query time versus various sizes of pivot set for different theshold distances}
+\includegraphics[width=1 \columnwidth]{img/image4.jpg}
+\caption{Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database}
 \label{fig:5.5}
 \end{figure}
 
 
-
-\begin{figure}[ht]	
+We observe that indexing time is increasing almost linearly with increase in the number of pivots chosen at each step of the M-tree algorithm. Even though indexing is an offline process we do not want the indexing time to run into days. If indexing time is very high, updates to the chemical compound database would be very expensive since we need a re-indexing into the chemical database. Hence we need to have a threshold for indexing time.
+\begin{figure}[ht!]	
 \centering
-\includegraphics[width=1 \columnwidth]{img/image6.jpg}
-\caption{Indexing time versus dataset size}
+\includegraphics[width=1 \columnwidth]{img/image7.jpg}
+\caption{Indexing time versus different sizes of pivot set size}
 \label{fig:5.6}
 \end{figure}
 
 
 
-\begin{figure}[ht]	
+\subsection{Threshold Distance}
+As described in earlier sections, the range query distance threshold (t) is thse cutoff used for determining similarity.
+
+\begin{figure}[ht!]	
 \centering
-\includegraphics[width=1 \columnwidth]{img/image7.jpg}
-\caption{Indexing time versus different sizes of pivot set size}
+\includegraphics[width=1 \columnwidth]{img/image5.jpg}
+\caption{Average Range Search Query time versus various sizes of pivot set for different theshold distances}
 \label{fig:5.7}
 \end{figure}
+
+
+
+\subsection{Dataset Size}
+We varied the dataset size 
+
+
+\begin{figure}[ht!]	
+\centering
+\includegraphics[width=1 \columnwidth]{img/image6.jpg}
+\caption{Indexing time versus dataset size}
+\label{fig:5.8}
+\end{figure}
+
+
+\begin{figure}[ht!]	
+\centering
+\includegraphics[width=1 \columnwidth]{img/image9.jpg}
+\caption{}
+\label{fig:5.8}
+\end{figure}
+
+
 
 
 
