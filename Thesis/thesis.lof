@@ -2,23 +2,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Assigning points to a cluster after the pivoting step of the M-tree indexing process\relax }}{9}{figure.caption.6}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Finding the outlier set in the M-tree index structure\relax }}{10}{figure.caption.7}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces M-tree tree structure Step 1\relax }}{12}{figure.caption.8}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces M-tree tree structure - After final step\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces M-tree: Assigning points to a cluster after the pivoting step of the M-tree indexing process\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces M-tree: Finding the outlier set in the M-tree index structure\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces M-tree: Tree structure Step 1\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces M-tree: Tree structure - After final step\relax }}{13}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Inverted Indexing Procedure Diagram\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Inverted Indexing: Procedure Diagram\relax }}{17}{figure.caption.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces All pair distances\relax }}{20}{figure.caption.12}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Distance of the closest point\relax }}{20}{figure.caption.13}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Feature distribution\relax }}{21}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of base outlier set\relax }}{24}{figure.caption.15}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Indexing time versus different sizes of base limiting outlier set\relax }}{25}{figure.caption.16}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{25}{figure.caption.17}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{26}{figure.caption.18}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Average Range Search Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{26}{figure.caption.19}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Indexing time versus different sizes of pivot set size\relax }}{27}{figure.caption.20}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Average Range Search Query time versus various sizes of pivot set for different theshold distances\relax }}{28}{figure.caption.21}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Indexing time versus dataset size\relax }}{28}{figure.caption.22}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces \relax }}{29}{figure.caption.23}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces M-tree: Average Range Query time versus Distance Threshold for various sizes of base outlier set\relax }}{24}{figure.caption.15}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces M-tree: Indexing time versus different sizes of base limiting outlier set\relax }}{25}{figure.caption.16}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 1k database\relax }}{26}{figure.caption.17}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 10k database\relax }}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 100k database\relax }}{27}{figure.caption.19}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces M-tree: Indexing time versus different sizes of pivot set size\relax }}{27}{figure.caption.20}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces M-tree: Average Range Query time versus various sizes of pivot set for different theshold distances\relax }}{28}{figure.caption.21}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces M-tree: Indexing time versus dataset size\relax }}{29}{figure.caption.22}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces M-tree: Range Query time versus dataset size\relax }}{29}{figure.caption.23}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Inverted Index: Indexing time versus dataset size for Inverted Indexing\relax }}{30}{figure.caption.24}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Inverted Index: \relax }}{31}{figure.caption.25}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Inverted Index: \relax }}{31}{figure.caption.26}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Comparsion: \relax }}{32}{figure.caption.27}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Comparsion: \relax }}{33}{figure.caption.28}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Comparsion: \relax }}{34}{figure.caption.29}

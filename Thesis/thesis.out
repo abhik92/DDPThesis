@@ -23,8 +23,10 @@
 \BOOKMARK [1][-]{section.6.1}{A Typical Fingerprint Dataset Analysis}{chapter.6}% 23
 \BOOKMARK [1][-]{section.6.2}{Observations on the Data}{chapter.6}% 24
 \BOOKMARK [0][-]{chapter.7}{Experiments}{}% 25
-\BOOKMARK [1][-]{section.7.1}{M-tree Indexing analysis}{chapter.7}% 26
+\BOOKMARK [1][-]{section.7.1}{M-tree based Indexing analysis}{chapter.7}% 26
 \BOOKMARK [2][-]{subsection.7.1.1}{Limiting Outlier Set Size }{section.7.1}% 27
 \BOOKMARK [2][-]{subsection.7.1.2}{Pivot Set size}{section.7.1}% 28
 \BOOKMARK [2][-]{subsection.7.1.3}{Threshold Distance}{section.7.1}% 29
 \BOOKMARK [2][-]{subsection.7.1.4}{Dataset Size}{section.7.1}% 30
+\BOOKMARK [1][-]{section.7.2}{Inverted Indexing Analysis}{chapter.7}% 31
+\BOOKMARK [1][-]{section.7.3}{Comparison of our techniques}{chapter.7}% 32
