@@ -1,11 +1,11 @@
 
-We construct the index structure on features. Our index structure is a chain hashing structure. For a give data point to be inserted in to the structure, for each of it features, we hash the feature and insert the reference to the data point in the chain. In our current implementation we have used a hash table of size 785985, and hence we do not have any collisions. The hash table is maintained as a binary search tree. This structure results in a chain of maximum length 264016.\\
+We construct the index structure on features. Our index structure is a chain hashing structure. For a give data point to be inserted in to the structure, for each of it features, we hash the feature and insert the reference to the data point in the chain. The motivation behind the use of an inverted index structure comes from the use of the tf-idf (term frequency-inverse document frequency) in text mining and information retrieval. Also chemical data is known to have an almost power law distribution for the presence of features in the data points.
 
 \section{Point Query}
 
 Point query operation can be very effectively 
 implemented in the inverted index structure. To perform this operation we maintain a list of candidate nodes, which needs to be explored sequentially. Our aim is to prune the candidate list as much as possible. This pruning is done by the following observation.\\
-Given a point $p$ we look at all its features, and find the list of all nodes associated with the features. It is a straight forward observation that $p$ is present in the dataset only if, it is in the intersection of all the associated point list. This reduces our candidate list to a size, atleast as small as the smallest list, among all the features present in $p$ (which in our case is on an average only 271).\\
+Given a point $p$ we look at all its features, and find the list of all nodes associated with the features. It is a straight forward observation that $p$ is present in the dataset only if, it is in the intersection of all the associated point list. This reduces our candidate list to a size, atleast as small as the smallest list, among all the features present in $p$ .\\
 
 \section{Range Query and K-nn}
 Range query and K-nn are much more complicated queries, when compared to a point query. The candidate set in this case is much more diverse and distributed. For example the candidate set for a Range query will be the union of all the point lists associated with the features of $p$, which is the worst case is of the order of $N$. We try to prune this by observing that the minimum number of features in a point is 7, hence we can remove the top 6 features from the index with out affecting the accuracy of searching. But this pruning does not result in any improvement in performance. We shall discuss this further the sections below.\\
@@ -42,17 +42,57 @@ Range query and K-nn are much more complicated queries, when compared to a point
 	
 	\item Consider feature $f_1$. Let's say we want to prune this feature. We are concerned with points having this feature but not having any of the other features of the query point. 
 	
-	\item Let us assume binary fingerprints for simplicity. The maximum similarity such a point can have with the query point is $\frac{1}{N_q - 1 + V_{f_1}}$ where $N_q$ is the number of features in query q and $V_{f_1}$ is the minimum number of features present among all points having the feature $f_1$
+	\item Let us assume binary fingerprints for simplicity. The maximum similarity such a point can have with the query point is $\frac{1}{N_q - 1 + V_{1}}$ where $N_q$ is the number of features in query q and $V_{1}$ is the minimum number of features present among all points having the feature $f_1$
 	
 	\item Hence if  distance threshold is t and the following holds
-	\[\frac{1}{N_q - 1 + V_{f_1}}  < 1-t\]
+	\[\frac{1}{N_q - 1 + V_{1}}  < 1-t\]
 we can prune the feature $f_1$		
 	
 	\item We continue a greedy approach, where we consider the next feature $f_2$ and try to prune both the features $f_1$ and $f_2$ together.
 	
 	\item Hence if till the $i^{th}$ feature is considered, if j features have been pruned, we can prune the $i^{th}$ feature as well if the following holds
-	\[\frac{j+1}{N_q - 1 + min(V_{f_i}, minimum~set~J~value)} < 1-t \] where  \textit{minimum~set~J~value} is the minimum number of features present in any of the compounds of the features pruned till now.
-	
-	\item We can extend this to non binary fingerprints as well.
+	\[\frac{j+1}{N_q - 1 + min(V_{i}, \rho)} < 1-t \] where $\rho$ is the minimum number of features present in any of the compounds of the features pruned till now.
 	
 \end{enumerate}
+
+\section{Extension to non-binary fingerprints}	
+We can extend this to non binary fingerprints as well. In step 5 of the previous algorithm, while considering non-binary fingerprints we have to use the following inequality to determine if feature $f_1$ can be pruned.
+
+\[\frac{min(j_1,W_1)}{S_q - W_1 -k_1 + l_1 + max (k_1, V_1)}  < 1-t\]
+
+Here $j_1$ is the maximum feature value taken for the feature $f_1$, $W_1$ is the first feature value of query $q$, $S_q$ is the sum magnitude of the feature values of the query $q$, $k_1$ is the is the minimum feature value taken for the feature $f_1$, $l_1$ is the minimum sum of feature values for any point containing the feature $f_1$ and $t$ is the threshold similarity
+
+Hence if till the $i^{th}$ feature is considered, if j features have been pruned, we can prune the $i^{th}$ feature as well if the following holds:
+		
+
+\[\frac{\sum\limits_{i \in J}min(j_i,W_i)}{S_q - \sum\limits_{i \in J}W_i -\sum\limits_{i \in J}k_i + max_{i \in J}l_i + \sum\limits_{i \in J}max (k_i, V_i)}  < 1-t\]
+	
+Here $J$ is the set of features already pruned,$j_i$ is the maximum feature value taken for the feature $f_i$, $W_i$ is the $i^th$ feature value of query $q$, $S_q$ is the sum magnitude of the feature values of the query $q$ as mentioned earlier, $k_i$ is the is the minimum feature value taken for the feature $f_i$ , $l_i$ is the minimum sum of feature values for any point containing the feature $f_i$ and $t$ is the threshold similarity
+
+
+
+
+\section{Using the Minimum Similarity Bound}
+
+Just like in the M-tree, similar to using the triangle inequality bounds, instead of using the maximum possible similarity, we used the minimum possible similarity and use it to include all points contained by a feature.
+
+Hence for a feature $f_1$ of a binary fingerprint query $q$, we can include all points having feature $f_1$ in our result set if the following inequality holds
+	\[\frac{1}{N_q - 1 + U_{1}}  > 1-t\]
+Here $N_q$ is the number of features in query q and $U_{1}$ is the maximum number of features present among all points having the feature $f_1$. This holds true because the right hand side of the bound represents the least possible similarity between the query and any compound having feature $f_1$. If the left hand side is greater than the similarity threshold s ($s=1-t$), than we need not undergo the min-max similarity calculation for all the chemical fingerprints.
+
+This is a very loose lower bound and hence we observed in our results that we were unable to exploit this bound for speeding up our process.
+	
+
+
+\section{Splitting Features}
+
+
+
+\begin{figure}[ht]	
+\centering
+\includegraphics[width=1 \columnwidth]{img/feat_split.jpg}
+\caption{Inverted Indexing: Splitting the heavy hitting features}
+\label{fig:split}
+\end{figure}
+
+

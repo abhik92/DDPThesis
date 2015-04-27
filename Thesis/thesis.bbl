@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -56,6 +56,12 @@
 \newblock {\em URL http://www. daylight. com/dayhtml/doc/theory/theory. toc.
   html\/}.
 
+\bibitem[{Klein {\em et~al.\/}(2011)Klein, Kriege, and Mutzel}]{klein2011ct}
+{\bf Klein, K.}, {\bf N.~Kriege}, and {\bf P.~Mutzel}, Ct-index:
+  Fingerprint-based graph indexing combining cycles and trees.
+\newblock {\em In\/} {\em Data Engineering (ICDE), 2011 IEEE 27th International
+  Conference on\/}. IEEE, 2011.
+
 \bibitem[{Lipkus(1999)}]{lipkus1999proof}
 {\bf Lipkus, A.~H.} (1999).
 \newblock A proof of the triangle inequality for the tanimoto distance.
@@ -68,6 +74,13 @@
 \newblock {\em In\/} {\em Database Theory-ICDT 2005\/}. Springer, 2005,
   398--412.
 
+\bibitem[{Napolitano {\em et~al.\/}(2014)Napolitano, Tagliaferri, and
+  Baldi}]{napolitano2014adaptive}
+{\bf Napolitano, F.}, {\bf R.~Tagliaferri}, and {\bf P.~Baldi}, An adaptive
+  reference point approach to efficiently search large chemical databases.
+\newblock {\em In\/} {\em Recent Advances of Neural Network Models and
+  Applications\/}. Springer, 2014, 63--74.
+
 \bibitem[{Nasr {\em et~al.\/}(2010)Nasr, Hirschberg, and
   Baldi}]{nasr2010hashing}
 {\bf Nasr, R.}, {\bf D.~S. Hirschberg}, and {\bf P.~Baldi} (2010).
@@ -76,12 +89,29 @@
 \newblock {\em Journal of chemical information and modeling\/}, {\bf 50}(8),
   1358--1368.
 
+\bibitem[{Nasr {\em et~al.\/}(2012)Nasr, Vernica, Li, and
+  Baldi}]{nasr2012speeding}
+{\bf Nasr, R.}, {\bf R.~Vernica}, {\bf C.~Li}, and {\bf P.~Baldi} (2012).
+\newblock Speeding up chemical searches using the inverted index: The
+  convergence of chemoinformatics and text search methods.
+\newblock {\em Journal of chemical information and modeling\/}, {\bf 52}(4),
+  891--900.
+
 \bibitem[{Swamidass and Baldi(2007)}]{swamidass2007bounds}
 {\bf Swamidass, S.~J.} and {\bf P.~Baldi} (2007).
 \newblock Bounds and algorithms for fast exact searches of chemical
   fingerprints in linear and sublinear time.
 \newblock {\em Journal of chemical information and modeling\/}, {\bf 47}(2),
   302--317.
+
+\bibitem[{Thiel {\em et~al.\/}(2014)Thiel, Sach-Peltason, Ottmann, and
+  Kohlbacher}]{thiel2014blocked}
+{\bf Thiel, P.}, {\bf L.~Sach-Peltason}, {\bf C.~Ottmann}, and {\bf
+  O.~Kohlbacher} (2014).
+\newblock Blocked inverted indices for exact clustering of large chemical
+  spaces.
+\newblock {\em Journal of chemical information and modeling\/}, {\bf 54}(9),
+  2395--2401.
 
 \bibitem[{Willett(2006)}]{willett2006similarity}
 {\bf Willett, P.} (2006).

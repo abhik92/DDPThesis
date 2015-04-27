@@ -1,14 +1,19 @@
 
 \section{Problem Statement}
 
-As the title suggests we are interested in fast indexing and searching of chemical fingerprints. We want to propose new indexing techniques which build on current indexing data structures and which will make searching for chemical compounds in the database faster. Our primary goal is to be able to perform queries on our compound database as fast as possible.\\
-
+As the title suggests we are interested in fast indexing and searching of chemical fingerprints. We want to propose new indexing techniques which build on current indexing data structures and which will make searching for chemical compounds in the database faster. Our primary goal is to be able to perform queries on our compound database as fast as possible.
 We are looking at accurate searching of similar compounds when given a query compound. The similarity of chemical fingerprints is established using the Min-Max distance which is the generalization of Tanimoto distance for non-binary datasets (explained in the next section). We are dealing with exact similarity match and not approximate similarity . We will be looking at different types of queries, namely the range, point and top-k queries .\\
 
 Range queries are of the form , where given a fingerprint, say {\textit{f}, and a threshold similarity \textbf{$\theta$} we want to find the set $S$ of all fingerprints, such that 
 \[ sim(f,g)~ > ~\theta ~~ \Rightarrow  \textbf{$g\in S$} \] 
 
 Top k search queries would require us to find the top k most similar compounds to the query compound. Given a fingerprint, say \textit{f} and a value \textit{k},we want to find the Set $S$ of size k such that 
-\[ sim(f,g) \geq sim(f,h) ~~\forall g \in S ,~\forall h \notin S \] . We haven't looked at these search queries in the experiments as of yet but plan to explore this area in the future.\\
+\[ sim(f,g) \geq sim(f,h) ~~\forall g \in S ,~\forall h \notin S \] . We haven't looked at these search queries in the experiments as of yet but plan to explore this area in the future.
 
-Our aim as mentioned earlier is to come up with a novel indexing scheme which would make the aforementioned tasks faster. For range queries we would want to achieve sub-linear search time speeds.The challenge and novelty in our work comes from the fact that, unlike in  \citet*{swamidass2007bounds} and many other state of the art techniques developed in this domain, we are working on non-binary vector fingerprints.\\
+Our aim as mentioned earlier is to come up with a novel indexing scheme which would make the aforementioned tasks faster. For range queries we would want to achieve sub-linear search time speeds.The challenge and novelty in our work comes from the fact that, unlike in  \citet*{swamidass2007bounds} and many other state of the art techniques developed in this domain, we are working on non-binary vector fingerprints. 
+
+The indexing time i.e. the time required to index a compound on average is also a concern for us. For any new compound added to the database we would like to be able to add it easily to the index structure without undergoing any major time-consuming changes. We would like our algorithms to scale on large datasets so we would like to compare our average range search query times on different sizes of the dataset.
+
+An important thing to note here, which is also described in detail in Section 3.3 is that we are looking at exact threshold similarity searches and not interested in approximate or probabilistic techniques. In the next section we explain properties of the standard similarity measure used in cheminfomatics to compare chemical fingerprints, the Tanimoto similarity and its extension to non-binary datasets as well as how it can be exploited well to our benefit.  
+
+

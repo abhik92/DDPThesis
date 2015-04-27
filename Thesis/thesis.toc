@@ -3,30 +3,35 @@
 \contentsline {chapter}{LIST OF TABLES}{v}{chapter*.4}
 \contentsline {chapter}{LIST OF FIGURES}{vii}{chapter*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Related Work}{4}{chapter.2}
-\contentsline {chapter}{\numberline {3}Problem Formulation}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}Problem Statement}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}Similarity measure}{7}{section.3.2}
-\contentsline {chapter}{\numberline {4}M-tree Index Structure}{8}{chapter.4}
-\contentsline {section}{\numberline {4.1}Information in the data structure}{8}{section.4.1}
-\contentsline {section}{\numberline {4.2}Baseline Indexing approach}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Alternate indexing approach}{10}{section.4.3}
-\contentsline {section}{\numberline {4.4}Choosing pivot}{11}{section.4.4}
-\contentsline {section}{\numberline {4.5}Range Search Querying}{12}{section.4.5}
-\contentsline {section}{\numberline {4.6}Lipschitz Embedding}{14}{section.4.6}
-\contentsline {chapter}{\numberline {5}Inverted Index Structure}{16}{chapter.5}
-\contentsline {section}{\numberline {5.1}Point Query}{16}{section.5.1}
-\contentsline {section}{\numberline {5.2}Range Query and K-nn}{16}{section.5.2}
-\contentsline {section}{\numberline {5.3}Baseline technique}{17}{section.5.3}
-\contentsline {section}{\numberline {5.4}Pruning Features}{18}{section.5.4}
-\contentsline {chapter}{\numberline {6}Data}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}A Typical Fingerprint Dataset Analysis}{19}{section.6.1}
-\contentsline {section}{\numberline {6.2}Observations on the Data}{21}{section.6.2}
-\contentsline {chapter}{\numberline {7}Experiments}{23}{chapter.7}
-\contentsline {section}{\numberline {7.1}M-tree based Indexing analysis}{23}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Limiting Outlier Set Size }{23}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Pivot Set size}{24}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Threshold Distance}{25}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Dataset Size}{28}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Inverted Indexing Analysis}{29}{section.7.2}
-\contentsline {section}{\numberline {7.3}Comparison of our techniques}{30}{section.7.3}
+\contentsline {chapter}{\numberline {2}Related Work}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Problem Formulation}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Problem Statement}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Similarity measure}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Exact Threshold Similarity Search}{10}{section.3.3}
+\contentsline {chapter}{\numberline {4}M-tree Index Structure}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Information in the data structure}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Baseline Indexing approach}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Alternate indexing approach}{14}{section.4.3}
+\contentsline {section}{\numberline {4.4}Choosing pivot}{15}{section.4.4}
+\contentsline {section}{\numberline {4.5}Range Search Querying}{16}{section.4.5}
+\contentsline {section}{\numberline {4.6}Lipschitz Embedding}{18}{section.4.6}
+\contentsline {chapter}{\numberline {5}Inverted Index Structure}{20}{chapter.5}
+\contentsline {section}{\numberline {5.1}Point Query}{20}{section.5.1}
+\contentsline {section}{\numberline {5.2}Range Query and K-nn}{20}{section.5.2}
+\contentsline {section}{\numberline {5.3}Baseline technique}{21}{section.5.3}
+\contentsline {section}{\numberline {5.4}Pruning Features}{22}{section.5.4}
+\contentsline {section}{\numberline {5.5}Extension to non-binary fingerprints}{22}{section.5.5}
+\contentsline {section}{\numberline {5.6}Using the Minimum Similarity Bound}{23}{section.5.6}
+\contentsline {section}{\numberline {5.7}Splitting Features}{24}{section.5.7}
+\contentsline {chapter}{\numberline {6}Data Analysis}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}A Typical Fingerprint Dataset Analysis}{25}{section.6.1}
+\contentsline {section}{\numberline {6.2}Observations on the Data}{27}{section.6.2}
+\contentsline {chapter}{\numberline {7}Experiments and Results}{29}{chapter.7}
+\contentsline {section}{\numberline {7.1}M-tree based Indexing analysis}{29}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Limiting Outlier Set Size }{29}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Pivot Set size}{30}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Threshold Distance}{31}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Dataset Size}{34}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Inverted Indexing Analysis}{35}{section.7.2}
+\contentsline {section}{\numberline {7.3}Comparison of our techniques}{38}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{42}{chapter.8}
