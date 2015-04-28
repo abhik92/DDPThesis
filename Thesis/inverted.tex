@@ -33,6 +33,7 @@ Range query and K-nn are much more complicated queries, when compared to a point
 
 
 \section{Pruning Features}
+\label{sec:prune1}
  We use a greedy technique to prune features i.e. prune out features whose points are guaranteed to lie outside distance threshold.
  
 \begin{enumerate}
@@ -56,6 +57,7 @@ we can prune the feature $f_1$
 \end{enumerate}
 
 \section{Extension to non-binary fingerprints}	
+\label{sec:prune2}
 We can extend this to non binary fingerprints as well. In step 5 of the previous algorithm, while considering non-binary fingerprints we have to use the following inequality to determine if feature $f_1$ can be pruned.
 
 \[\frac{min(j_1,W_1)}{S_q - W_1 -k_1 + l_1 + max (k_1, V_1)}  < 1-t\]
@@ -86,7 +88,7 @@ This is a very loose lower bound and hence we observed in our results that we we
 
 \section{Splitting Features}
 
-
+Another technique we considered for the binary dataset is the splitting of the heavy hitting features into two sets so that we can prune atleast the bigger set. If the bound for pruning the feature fails, then we try to split the feature into two sets so that the minimum number of features for any point in one of the sets increases and then giving a chance of the set being pruned. For this we have to sort the points in the feature in ascending order of the number of features present in the point .This procedure is applied only for the heavy hitting features since they appear in a large number of points. If we were to apply this to other features, the time spent partitioning would exceed the probable time spent in comparing all points in the partition to the query. Hence we would like to apply this only to features which are present in more than a threshold number of points.\\
 
 \begin{figure}[ht]	
 \centering
@@ -95,4 +97,4 @@ This is a very loose lower bound and hence we observed in our results that we we
 \label{fig:split}
 \end{figure}
 
-
+\autoref{fig:split} shows the number of features versus every point present for two heavy hitting features. It can be observed that the curve is almost linear, hence intuitively we wouldn't get a very large increase in the minimum number of features for the larger set of points.In \autoref{fig:split}, we can observe two lines \textit{a} and \textit{b}. If we were to split at \textit{a}(into approximately two equal sets) after sorting, our pruning bound would have a lower chance of getting  satisfied while if we were to cut at \textit{b}(at about 90\% to 10\%) we would have a better chance of pruning the set containing the top 10 percent of the points.

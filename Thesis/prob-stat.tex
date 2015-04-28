@@ -6,9 +6,9 @@ We are looking at accurate searching of similar compounds when given a query com
 
 Range queries are of the form , where given a fingerprint, say {\textit{f}, and a threshold similarity \textbf{$\theta$} we want to find the set $S$ of all fingerprints, such that 
 \[ sim(f,g)~ > ~\theta ~~ \Rightarrow  \textbf{$g\in S$} \] 
-
-Top k search queries would require us to find the top k most similar compounds to the query compound. Given a fingerprint, say \textit{f} and a value \textit{k},we want to find the Set $S$ of size k such that 
-\[ sim(f,g) \geq sim(f,h) ~~\forall g \in S ,~\forall h \notin S \] . We haven't looked at these search queries in the experiments as of yet but plan to explore this area in the future.
+%
+%Top k search queries would require us to find the top k most similar compounds to the query compound. Given a fingerprint, say \textit{f} and a value \textit{k},we want to find the Set $S$ of size k such that 
+%\[ sim(f,g) \geq sim(f,h) ~~\forall g \in S ,~\forall h \notin S \] . We haven't looked at these search queries in the experiments as of yet but plan to explore this area in the future.
 
 Our aim as mentioned earlier is to come up with a novel indexing scheme which would make the aforementioned tasks faster. For range queries we would want to achieve sub-linear search time speeds.The challenge and novelty in our work comes from the fact that, unlike in  \citet*{swamidass2007bounds} and many other state of the art techniques developed in this domain, we are working on non-binary vector fingerprints. 
 

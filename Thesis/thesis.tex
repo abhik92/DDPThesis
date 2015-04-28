@@ -17,7 +17,7 @@
 \usepackage{graphicx}
 
 \usepackage[square]{natbib}
-\usepackage[colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
 	\usepackage{hyperref} % hyperlinks for references.
 \usepackage[all]{hypcap}
 \usepackage{complexity}
@@ -96,16 +96,12 @@ Date:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgements
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Abstract
+
+\input{ack.tex}
 
 \input{abstract.tex}
-
-
 \pagebreak
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table of contents etc.
 
 \begin{singlespace}
 \tableofcontents
@@ -120,14 +116,8 @@ Date:
 \pagebreak
 
 
-%The main text will follow from this point so set the page numbering
-%to arabic from here on.
 \pagenumbering{arabic}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Introduction.
-%\input{introduction.tex}
-%\input{misc.tex}
-%\input{questions.tex}
+
 \chapter{Introduction}
 \input{introduction.tex}
 
@@ -145,47 +135,15 @@ Date:
 \chapter{Inverted Index Structure}
 \input{inverted.tex}
 
-\chapter{Data Analysis}
+\chapter{Data}
 \input{Data.tex}
 
-\chapter{Experiments and Results}
+\chapter{Experiments}
 \input{Experiment.tex}
 
-
-
-
-
-
-%
-%\chapter{M-tree Based Indexing}
-%\input{m-tree.tex}
-%
-%\chapter{Experiments - M-tree Indexing}
-%\input{mtree-exp.tex}
-%
-%\chapter{Inverted Indexing}
-%\input{invert.tex}
-%
-%\chapter{Experiments - Inverted Indexing}
-%\input{point-exp.tex}
-%
-%\chapter{Data Characteristics}
-%\input{data.tex}
-%
 \chapter{Conclusion}
 \input{conc.tex}
-%
-%
-%\chapter{Future Work}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendices.
-%\appendix
-%\chapter{Appendix}
-%\input{appendix.tex}
-% Bibliography.
 \pagebreak
 
 \begin{singlespace}

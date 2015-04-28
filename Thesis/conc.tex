@@ -1,5 +1,18 @@
 %
 %\section{Conclusions and Future Directions}
 %
-%In this work we were able to show the effectiveness of M-tree based approach on non-binary feature vectors. Though we could achieve up to 2-fold improvement in query time, we would want to improve this further by doing further analysis.We also were able to effectively exploit the sparsity in data to construct the inverted index, which had given up to 100-fold improvement in query time.The current work has opened up many more avenues for us to explore. We shall be looking into the following areas:\\
+In this work we were able to show the effectiveness of our M-tree based index approach on both binary and non-binary feature vectors. We have proposed an unique indexing procedure which was able to handle the outliers efficiently. We also proposed a pivoting method which was able to achieve a linear time (per compound on average) indexing runtime . We were able to achieve up to 2-fold improvement in query time compared to the Bit bound technique. Next we showed that the contractive mapping of Lipschitz Embedding was unable to fasten the range search query process. 
+
+Motivated by the use of tf-idf (term frequency- inverse document freqency) score in text mining and information retrieval, we came up with an inverted index structure which relied on the pruning of features, whose points were guaranteed to be absent in the result set. This pruning was achieved using bounds which we have derived in \autoref{sec:prune1} and \autoref{sec:prune2}. We were able to achieve upto 6-times speedup compared to the Bit bound technique.
+
+We have also done a comprehensive analysis of the data to understand properties of the dataset which could be exploited in the search process. We have also shown through experiments the effectiveness of our algorithms on non-binary datasets which no previous work in this field have shown.
+ 
+For future work, we would like to evaluate our algorithm against other techniques. We are also looking into how our methods could be adapted to facilitate a top-k search in addition to the range search.
+
+%\begin{enumerate}
+%\item Use of streaming algorithm as mentioned in the previous section. 
+%\item We also observe that we can replace Binary Search Tree in the inverted index technique by a height balanced data structure to result in even more efficient index structure. 
+%\item One other direction which is a worthy endeavour is the exploitation of the fact that the maximum value taken by any feature is bounded. We may be able to come up with some good bounds on the distance metric based on this, these bound can be in turn used to provide good pruning.  
+%\item We will also be looking into other dimensionality reduction techniques like principal component analysis, fast map, etc. Since we are looking into exact range search queries, we must be able to give guarantees on the new mapping, preferably a contractive mapping which will be a challenge \\
+%\end{enumerate}
 % 
