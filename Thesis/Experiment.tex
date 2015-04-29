@@ -1,10 +1,12 @@
 
-In our experiments, we evaluated our indexing techniques on two real world datasets. We have compared our indexing techniques by comparing the running time with that of the state of the art technique  . We are also concerned about the indexing time, especially for the M-tree index structure since we do not want our index procedure to run into hours. We have used the PubChem and DUD datasets. We will referring to the binary and non-binary versions of the PubChem datasets as PubChem-b and PubChem-n respectively.
+In our experiments, we evaluated our indexing techniques on two real world datasets. We have compared our indexing techniques by comparing the running time with that of the state of the art technique  . We are also concerned about the indexing time, especially for the M-tree index structure since we do not want our index procedure to run into hours.
+
+The first dataset is the PubChem(-n and -b) dataset . The second dataset is from DUD, a directory of useful decoys for benchmarking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially avaiilable compounds. To extarct fingerprints we used MOLPRINT2D, a molecular fingerprinting technique.
 
 
 \section{M-tree based Indexing analysis}	
 
-For these set of experiments the test bed used was a 4 Intel(R) Core(TM) i7-4770 CPU \@ 3.40GHz with 8GB RAM. We have varied several parameters in the experiment and have tried to estimate them emperically. We have used the non-binary version of the Swamidass dataset for all analysis of the M-tree. We use different dataset sizes of 1000, 10,000 and 100,000 number of chemical compounds.
+For these set of experiments the test bed used was a 4 Intel(R) Core(TM) i7-4770 CPU \@ 3.40GHz with 8GB RAM. We have varied several parameters in the experiment and have tried to estimate them emperically. We have used the PubChem-n dataset for all analysis of the M-tree. We use different dataset sizes of 1000, 10,000 and 100,000 number of chemical compounds.
 
 For evaluation purposes we implemented a linear brute force scan to compute the range query and used that as a benchmark for the results. The result set obtained from our technique was compared with the linear brute scan answer set for verification purposes using the fingerprint id's. The query time and the indexing time is averaged over the 500 random query sample data points and the unit in ms per compound. We have varied the following parameters .
 
@@ -90,14 +92,14 @@ As seen in \autoref{fig:5.7}, we observe that for low value of threshold at 0.1,
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image5.jpg}
-\caption{M-tree: Average Range Query time versus various sizes of pivot set for different theshold distances}
+\caption{M-tree: Average Range Query time versus various sizes of pivot set for different threshold distances}
 \label{fig:5.7}
 \end{figure}
 
 
 
 \subsection{Dataset Size}
-We varied the dataset size for the non-binary version of the Swamidass dataset to 1000, 10,000 and 100,000 and compared the indexing time as well as range search query time for various thresholds. 
+We varied the dataset size for the non-binary version of the PubChem-n to 1000, 10,000 and 100,000 and compared the indexing time as well as range search query time for various thresholds. 
 
 
 \begin{figure}[ht!]	
@@ -117,7 +119,7 @@ We varied the dataset size for the non-binary version of the Swamidass dataset t
 
 As seen in \autoref{fig:5.9}, we can observe that for a particular value of the distance threshold , the range search query time also increases linearly with dataset size . The slope is higher for higher values of threshold distance.
 
-As seen in \autoref{fig:5.8} we can observe that the average indexing time per compund on average increases linearly with increase in dataset size . This is as a result of our pivoting method with sampling which reduces the computation. If our pivoting step had been an exhaustive search on the database the curve would have not been linear, 
+As seen in \autoref{fig:5.8} we can observe that the average indexing time per compound on average increases linearly with increase in dataset size . This is as a result of our pivoting method with sampling which reduces the computation. If our pivoting step had been an exhaustive search on the database the curve would have not been linear, 
 
 
 
@@ -125,7 +127,7 @@ As seen in \autoref{fig:5.8} we can observe that the average indexing time per c
 
 \section{Inverted Indexing Analysis}
 
-For the below experiments the testbed used was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. We tested the inverted index structure against both binary as well as non-binary versions of the Swamidass dataset. For evaluation and verification processes, a complete linear database scan was done as with the M-tree case to compare the result sets. One advantage of Inverted indexing procedure over the M-tree index structure is the much lesser time required for the indexing step. 
+For the below experiments the testbed used was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. We tested the inverted index structure against both binary as well as non-binary versions of the PubChem-n dataset. For evaluation and verification processes, a complete linear database scan was done as with the M-tree case to compare the result sets. One advantage of Inverted indexing procedure over the M-tree index structure is the much lesser time required for the indexing step. 
 
 Indexing time per compound is observed to be almost constant between 1ms to 2ms per compound on average. As observed in \autoref{fig:5I1} the graph is almost straight parallel to the x-axis for both the binary as well as the non-binary dataset. This is in opposition to the M-tree index structure where the indexing time was increasing with increase in the dataset size. 
 
@@ -140,7 +142,7 @@ Indexing time per compound is observed to be almost constant between 1ms to 2ms 
 
 \autoref{fig:5I2} and \autoref{fig:5I3} show how the range query time graph increases with threshold distances .We can see that in both the figures the time increases monotonically. The double derivative of the curve can be observed to be positive. 
 
-We also observe that the range query time for the binary version of the Swamidass dataset is lesser compared to the non-binary version of the same dataset. This can be explained by more pruning of features in the binary dataset.
+We also observe that the range query time for the binary version of the PubChem-n dataset is lesser compared to the non-binary version of the same dataset. This can be explained by more pruning of features in the binary dataset.
 
 Typically in fingerprint datasets searching is done for a reasonable threshold distance of 0.1 to 0.3 and the search query times uptil 0.3 distance is within a second per compound on average. The figures show that the indexing technique scales well on bigger datasets for low threshold values, better than it scales on higher theshold values.
 
@@ -148,14 +150,14 @@ Typically in fingerprint datasets searching is done for a reasonable threshold d
 \begin{figure}[ht]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/imageI2.jpg}
-\caption{Inverted Index: Range Query time versus Distance threshold for different dataset sizes- binary dataset}
+\caption{Inverted Index: Range Query time versus Distance threshold for different dataset sizes- PubChem-b dataset}
 \label{fig:5I2}
 \end{figure}
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/imageI3.jpg}
-\caption{Inverted Index: Range Query time versus Distance threshold for different dataset sizes- non-binary dataset}
+\caption{Inverted Index: Range Query time versus Distance threshold for different dataset sizes- PubChem-n dataset}
 \label{fig:5I3}
 \end{figure}
 
@@ -166,15 +168,15 @@ We have also experimented the mentioned improvisations in the Inverted Indexing 
 
 \section{Comparison of our techniques}
 
-We have compared the three techniques, namely the M-tree indexing technique , the Inverted Indexing technique and the bit bounding technique described in \citet*{swamidass2007bounds}. The datasets used are 2 binary (binary version of the Swamidass dataset (200k compounds) and the DUD repository dataset) and 1 non-binary datasets(non-binary version of the Swamidass dataset(200k compounds)). A test set of 500 compounds were chosen randomly from the datasets for evaluation purposes. For the experiments, the testbed was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. 
+We have compared the three techniques, namely the M-tree indexing technique , the Inverted Indexing technique and the bit bounding technique described in \citet*{swamidass2007bounds}. We have used the PubChem-n, PubChem-b and DUD datasets for our evaluations. A test set of 500 compounds were chosen randomly from the datasets for evaluation purposes. For the experiments, the testbed was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. 
 
-As observed in \autoref{tab: table1}, comparison of the techniques on the binary Swamidass dataset showed for a very low threshold value the M-tree index showed the most promising results, achieving upto two times the speed of the bit bound technique. The inverted index is also able to achieve 2-3 times speedup compared to the bit bound technique. \\
+As observed in \autoref{tab: table1}, comparison of the techniques on the PubChem-b dataset showed for a very low threshold value the M-tree index showed the most promising results, achieving upto two times the speed of the bit bound technique. The inverted index is also able to achieve 2-3 times speedup compared to the bit bound technique. \\
 
 
 
 \begin{table}[ht]
 \centering
-\caption{Comparsion of techniques applied on the non-binary Swamidass fingerprint dataset}
+\caption{Comparsion of techniques applied on the PubChem-n fingerprint dataset}
 \label{tab: table1}
 \begin{tabular}{|c|c|c|c|}
 \hline 
@@ -197,7 +199,7 @@ We have shown the effectiveness of out technique on non-binary datasets, a featu
 
 \begin{table}[ht!]
 \centering
-\caption{Comparsion of techniques applied on the binary Swamidass fingerprint dataset}
+\caption{Comparsion of techniques applied on the PubChem-b fingerprint dataset}
 \label{tab: table2}
 \begin{tabular}{|c|c|c|c|}
 \hline 
@@ -241,13 +243,13 @@ Distance threshold & Mtree	& Bit bound	& 	Inverted Indexing \\
 \end{table}
 
 
-\autoref{tab: table2} shows the comparison of techniques applied on the binary Swamidass dataset while \autoref{tab: table3} shows the comparison of the techniques on the binary DUD dataset. The performance of M-tree index can be seen to be comparable to the bit bound while the performance of the inverted index can be observed to be superior than both the other techniques. For the binary Swamidass dataset we observe  that there is always a 2-2.5 times speedup for the inverted index as compared to the bit bound technique. The M-tree index beats the other two techniques for low threshold values but there is a sharp increase in range search query time around 0.3 where the runtime shoots up .
+\autoref{tab: table2} shows the comparison of techniques applied on the PubChem-b dataset while \autoref{tab: table3} shows the comparison of the techniques on the binary DUD dataset. The performance of M-tree index can be seen to be comparable to the bit bound while the performance of the inverted index can be observed to be superior than both the other techniques. For the PubChem-b dataset we observe  that there is always a 2-2.5 times speedup for the inverted index as compared to the bit bound technique. The M-tree index beats the other two techniques for low threshold values but there is a sharp increase in range search query time around 0.3 where the runtime shoots up .
 
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.75 \columnwidth]{img/imageC1.jpg}
-\caption{Comparsion of techniques applied on the non-binary Swamidass fingerprint dataset}
+\caption{Comparsion of techniques applied on the PubChem-n fingerprint dataset}
 \label{fig:5C1}
 \end{figure}
 
@@ -259,14 +261,14 @@ Comparison on the DUD dataset showed that the inverted indexing technique was ab
 \begin{figure}[ht]	
 \centering
 \includegraphics[width=0.75 \columnwidth]{img/imageC2.jpg}
-\caption{Comparsion of techniques applied on the binary Swamidass fingerprint dataset}
+\caption{Comparsion of techniques applied on the PubChem-b fingerprint dataset}
 \label{fig:5C2}
 \end{figure}
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.75 \columnwidth]{img/imageC3.jpg}
-\caption{Comparsion of techniques applied on the binbary DUD dataset}
+\caption{Comparsion of techniques applied on the binary DUD dataset}
 \label{fig:5C3}
 \end{figure}
 

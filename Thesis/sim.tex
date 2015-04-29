@@ -5,6 +5,7 @@ As mentioned in the earlier section the main challenge is the fact that we are d
 \begin{dfn}
 In mathematical terms,for binary fingerprints X and Y ,where $X_i$ is the $i^th$ bit of X we define Tanimoto similarity as
 \begin{equation}
+\label{eq:tan}
 T_s(X,Y) = \frac{\sum \limits_i X_i \wedge Y_i} {\sum \limits_i X_i \vee Y_i} 
 \end{equation}
 \end{dfn}
@@ -16,6 +17,7 @@ For non-binary fingerprints we can extend the same Tanimoto coefficient by using
 \begin{dfn}
 Min-Max similarity( $M_s$) between two fingerprints X, Y can be formulated as, where $X_i$ corresponds to the $i_{th}$ feature value of X 
 \begin{equation}
+\label{eq:minmax}
  M_s(X,Y) = \frac{\sum \limits_{i} min(X_i, Y_i)}{\sum \limits_{i} max(X_i, Y_i)}
 \end{equation}
 \end{dfn}

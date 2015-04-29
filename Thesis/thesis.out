@@ -8,7 +8,7 @@
 \BOOKMARK [1][-]{section.3.1}{Problem Statement}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.2}{Similarity measure}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.3}{Exact Threshold Similarity Search}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{M-tree Index Structure}{}% 11
+\BOOKMARK [0][-]{chapter.4}{M-tree based Index Structure}{}% 11
 \BOOKMARK [1][-]{section.4.1}{Information in the data structure}{chapter.4}% 12
 \BOOKMARK [1][-]{section.4.2}{Baseline Indexing approach}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.3}{Alternate indexing approach}{chapter.4}% 14
@@ -18,21 +18,22 @@
 \BOOKMARK [0][-]{chapter.5}{Inverted Index Structure}{}% 18
 \BOOKMARK [1][-]{section.5.1}{Point Query}{chapter.5}% 19
 \BOOKMARK [1][-]{section.5.2}{Range Query and K-nn}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.3}{Baseline technique}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.4}{Pruning Features}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.5}{Extension to non-binary fingerprints}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.6}{Using the Minimum Similarity Bound}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.7}{Splitting Features}{chapter.5}% 25
-\BOOKMARK [0][-]{chapter.6}{Data}{}% 26
-\BOOKMARK [1][-]{section.6.1}{Experiment Datasets}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.2}{A Typical Fingerprint Dataset Analysis}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.3}{Observations on the Data}{chapter.6}% 29
-\BOOKMARK [0][-]{chapter.7}{Experiments}{}% 30
-\BOOKMARK [1][-]{section.7.1}{M-tree based Indexing analysis}{chapter.7}% 31
-\BOOKMARK [2][-]{subsection.7.1.1}{Limiting Outlier Set Size }{section.7.1}% 32
-\BOOKMARK [2][-]{subsection.7.1.2}{Pivot Set size}{section.7.1}% 33
-\BOOKMARK [2][-]{subsection.7.1.3}{Threshold Distance}{section.7.1}% 34
-\BOOKMARK [2][-]{subsection.7.1.4}{Dataset Size}{section.7.1}% 35
-\BOOKMARK [1][-]{section.7.2}{Inverted Indexing Analysis}{chapter.7}% 36
-\BOOKMARK [1][-]{section.7.3}{Comparison of our techniques}{chapter.7}% 37
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 38
+\BOOKMARK [1][-]{section.5.3}{Baseline technique for Range Search}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.4}{A Pruning bound for binary fingerprints}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.5}{Improvised Range Search technique}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.6}{Extension to non-binary fingerprints}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.7}{Using the Minimum Similarity Bound}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.8}{Splitting Features}{chapter.5}% 26
+\BOOKMARK [0][-]{chapter.6}{Data}{}% 27
+\BOOKMARK [1][-]{section.6.1}{Experiment Datasets}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.2}{A Typical Fingerprint Dataset Analysis}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.3}{Observations on the Data}{chapter.6}% 30
+\BOOKMARK [0][-]{chapter.7}{Experiments}{}% 31
+\BOOKMARK [1][-]{section.7.1}{M-tree based Indexing analysis}{chapter.7}% 32
+\BOOKMARK [2][-]{subsection.7.1.1}{Limiting Outlier Set Size }{section.7.1}% 33
+\BOOKMARK [2][-]{subsection.7.1.2}{Pivot Set size}{section.7.1}% 34
+\BOOKMARK [2][-]{subsection.7.1.3}{Threshold Distance}{section.7.1}% 35
+\BOOKMARK [2][-]{subsection.7.1.4}{Dataset Size}{section.7.1}% 36
+\BOOKMARK [1][-]{section.7.2}{Inverted Indexing Analysis}{chapter.7}% 37
+\BOOKMARK [1][-]{section.7.3}{Comparison of our techniques}{chapter.7}% 38
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 39

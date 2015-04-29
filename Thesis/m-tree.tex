@@ -5,7 +5,16 @@ M-tree also known as the Metric tree is a tree data structure constructed using 
 The M-tree data structure compartments the objects into nodes, which define regions of the metric space. The maximum capacity of the M-tree is M. For each database object to be indexed, there is an entry $O_j = [ O_j, id(O_j), dist(O_j , P(O_j )) ]$
 in some leaf node.  $O_j$ stores the object information, mainly the data point feature values or dimension coordinates, id($O_j$) stores the id of the object and $dist(O_j , P(O_j ))$ stores the distance of it to its parent object. \\
 
-A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a subtree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a subtree rooted at router object $O_r$ is at atmost $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
+\begin{figure}[ht]	
+\centering
+\includegraphics[width=0.7 \columnwidth]{img/mtree.jpg}
+\caption{M-tree: Structure overview}
+\label{fig:4.0}
+\end{figure}
+
+A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a subtree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a subtree rooted at router object $O_r$ is at at-most $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
+
+
 
 
 \section{Information in the data structure}
