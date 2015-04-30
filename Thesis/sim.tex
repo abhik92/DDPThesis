@@ -1,28 +1,28 @@
 \section{Similarity measure}
 
-As mentioned in the earlier section the main challenge is the fact that we are dealing with non binary fingerprints which has seen very little work. Many of the papers mentioned in the related work suggest that their technique can be extended to non-binary fingerprints but fail to provide any experimental evaluation nor any details about the similarity measure used. We will be using a generalization of the Tanimoto similarity measure to incorporate non binary feature values. 
+As mentioned in the earlier section the main challenge is the fact that we are dealing with non binary fingerprints which has seen very little work. Many of the papers mentioned in the related work suggest that their technique can be extended to non-binary fingerprints but fail to provide any experimental evaluation nor any details about the similarity measure used. We will be using a generalization of the Tanimoto similarity measure to incorporate non binary feature values. \\
 
 \begin{dfn}
-In mathematical terms,for binary fingerprints X and Y ,where $X_i$ is the $i^th$ bit of X we define Tanimoto similarity as
+In mathematical terms, for binary fingerprints X and Y, where $X_i$ is the $i^th$ bit of fingerprint X we define Tanimoto similarity as: \\
 \begin{equation}
 \label{eq:tan}
 T_s(X,Y) = \frac{\sum \limits_i X_i \wedge Y_i} {\sum \limits_i X_i \vee Y_i} 
 \end{equation}
 \end{dfn}
 
-The Tanimoto coefficient measure for chemical data can also be defined  as $\frac{x}{x+y+z}$, which is the number of features shared by the two compounds divided by the size of union of the non-zero features in the two compounds together . The variable x is the number of features (or number of 1-bits in a binary fingerprint) present in both the compounds while y and z represent the features present in one while not being present in the other. We can observe that the Tanimoto Similarity has a range from 0 to 1, where high cofficient scores indicates a greater similarity among the compounds than lower coefficient scores. One important thing to note here is that a score of 1 doesn't indicate that the compounds are the same, it just denotes the presence of similar substructures, bonds, molecules,etc in both the compounds i.e. their binary signature or fingerprint is identical. 
+The Tanimoto coefficient measure for chemical data can also be defined  as $\frac{x}{x+y+z}$, which is the number of features shared by the two compounds divided by the size of union of the non-zero features in the two compounds together . The variable x is the number of features (or number of 1-bits in a binary fingerprint) present in both the compounds while y and z represent the features present in one while not being present in the other. We can observe that the Tanimoto Similarity has a range from 0 to 1, where high coefficient scores indicates a greater similarity among the compounds than lower coefficient scores. One important thing to note here is that a score of 1 doesn't indicate that the compounds are the same, it just denotes the presence of similar substructures, bonds, molecules, etc in both the compounds i.e. their binary signature or fingerprint is identical. \\
 
-For non-binary fingerprints we can extend the same Tanimoto coefficient by using non-zero values as 1 . Another alternative is to use the similarity measure known as Min-Max similarity. 
-
+For non-binary fingerprints we can extend the same Tanimoto coefficient by using non-zero values as 1 . Another alternative is to use the similarity measure known as Min-Max similarity.\\
+ 
 \begin{dfn}
-Min-Max similarity( $M_s$) between two fingerprints X, Y can be formulated as, where $X_i$ corresponds to the $i_{th}$ feature value of X 
+Min-Max similarity( $M_s$) between two fingerprints X, Y, where $X_i$ corresponds to the $i_{th}$ feature value of X, can be formulated as follows: \\
 \begin{equation}
 \label{eq:minmax}
  M_s(X,Y) = \frac{\sum \limits_{i} min(X_i, Y_i)}{\sum \limits_{i} max(X_i, Y_i)}
 \end{equation}
 \end{dfn}
 
-If the fingerprints are binary, this similarity measure reduces to the Tanimoto coefficient or similarity. We need to ensure that the corresponding distance measure $M_d=1- M_s$is a metric. We can write the distance measure as:
+If the fingerprints are binary, this similarity measure reduces to the Tanimoto coefficient or similarity. We need to ensure that the corresponding distance measure $M_d=1- M_s$is a metric. We can write the distance measure as:\\
 \begin{equation}
  M_d(X,Y) = 1- M_s(X,Y) = 1- \frac{\sum \limits_{i} min(X_i, Y_i)}{\sum \limits_{i} max(X_i, Y_i)}
 \end{equation} 
@@ -31,8 +31,5 @@ If the fingerprints are binary, this similarity measure reduces to the Tanimoto 
  M_d(X,Y)= \frac{\sum \limits_{i} |X_i - Y_i|}{\sum \limits_{i} max(X_i, Y_i)}
 \end{equation} 
 
-We can easily see that $M_d(X,X)=0$ and that if $M_d(X,Y)=0 $ it implies $X_i = Y_i$ for all i, hence implying X=Y. The triangle inequality has been proved in \citet*{lipkus1999proof}. The triangle inequality bounds helps us in the M-tree index structure where we can use the bounds to prune the entire subtree of fingerprints or alternatively include the whole tree in our dataset.
-
-
-
+We can easily see that $M_d(X,X)=0$ and that if $M_d(X,Y)=0 $ it implies $X_i = Y_i$ for all i, hence implying X=Y. The triangle inequality has been proved in \citet*{lipkus1999proof}. The triangle inequality bounds helps us in the M-tree index structure where we can use the bounds to prune the entire sub-tree of fingerprints or alternatively include the whole tree in our dataset.\\
 

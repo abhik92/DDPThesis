@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.14)  30 APR 2015 15:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.15)  1 MAY 2015 05:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,11 +409,8 @@ Package: complexity 11/24/06  v0.77
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-
-Package complexity Warning: User Defined Commands file `mycomplexity.sty' not f
-ound, it will not be loaded. on input line 756.
-
-) (./algo.sty
+(/usr/share/texlive/texmf-dist/tex/latex/complexity/mycomplexity.sty))
+(./algo.sty
 Package: algo 1996/02/12 v1.2 LaTeX2e package for pseudo code
 
 Package: `algo' v1.2 for pseudo code
@@ -627,11 +624,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -639,32 +631,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
@@ -697,6 +689,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
 ) [6] [7]
 CHAPTER 3.
 (./prob-stat.tex
@@ -706,9 +703,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
 [8
 
-]) (./sim.tex [9]) (./exact.tex [10]) [11]
+]) (./sim.tex
+Underfull \hbox (badness 10000) in paragraph at lines 23--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+) (./exact.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 18--133
+
+ []
+
+[11] [12]
 CHAPTER 4.
 (./m-tree.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -720,7 +802,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--7
 
  []
 
-<img/mtree.jpg, id=406, 963.6pt x 722.7pt>
+<img/mtree.jpg, id=413, 963.6pt x 722.7pt>
 File: img/mtree.jpg Graphic file (type jpg)
  <use img/mtree.jpg>
 Package pdftex.def Info: img/mtree.jpg used on input line 10.
@@ -733,71 +815,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-[12
+[13
 
  <./img/mtree.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<img/image0a.jpg, id=411, 833.1125pt x 618.31pt>
+<img/image0a.jpg, id=418, 833.1125pt x 618.31pt>
 File: img/image0a.jpg Graphic file (type jpg)
  <use img/image0a.jpg>
 Package pdftex.def Info: img/image0a.jpg used on input line 36.
 (pdftex.def)             Requested size: 317.07614pt x 235.32819pt.
 
-<img/image0b.jpg, id=412, 819.06pt x 614.295pt>
+<img/image0b.jpg, id=419, 819.06pt x 614.295pt>
 File: img/image0b.jpg Graphic file (type jpg)
  <use img/image0b.jpg>
 Package pdftex.def Info: img/image0b.jpg used on input line 43.
 (pdftex.def)             Requested size: 317.07614pt x 237.81189pt.
- [13]
+ [14]
 Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[14 <./img/image0a.jpg>]
+[15 <./img/image0a.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
-[15 <./img/image0b.jpg>]
+[16 <./img/image0b.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<img/image0d.jpg, id=442, 883.3pt x 491.8375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+<img/image0d.jpg, id=450, 883.3pt x 491.8375pt>
 File: img/image0d.jpg Graphic file (type jpg)
  <use img/image0d.jpg>
-Package pdftex.def Info: img/image0d.jpg used on input line 109.
+Package pdftex.def Info: img/image0d.jpg used on input line 113.
 (pdftex.def)             Requested size: 452.9679pt x 252.22218pt.
 
-<img/image0e.jpg, id=443, 963.6pt x 722.7pt>
+<img/image0e.jpg, id=451, 963.6pt x 722.7pt>
 File: img/image0e.jpg Graphic file (type jpg)
  <use img/image0e.jpg>
-Package pdftex.def Info: img/image0e.jpg used on input line 117.
+Package pdftex.def Info: img/image0e.jpg used on input line 121.
 (pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-[17 <./img/image0d.jpg>] [18 <./img/image0e.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+[18 <./img/image0d.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+[19 <./img/image0e.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-) [19]
+
+Overfull \hbox (22.92287pt too wide) detected at line 183
+[]\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 p[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; f\OT1/c
+mr/m/n/10.95 (\OML/cmm/m/it/10.95 p[]\OT1/cmr/m/n/10.95 )) [] [] = [] \OMS/cmsy
+/m/n/10.95 j[] ^^@ []j [] [] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95 j\O
+ML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p[]; A[]\OT1/cmr/m/n
+/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/
+cmm/m/it/10.95 p[]; A[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j [] [] \OT1/cmr
+/m/n/10.95 = \OML/cmm/m/it/10.95 d[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\O
+T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.9
+5 ; f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p[]\OT1/cmr/m/n/10.95 ))
+ []
+
+<img/lip.jpg, id=482, 676.5275pt x 505.89pt>
+File: img/lip.jpg Graphic file (type jpg)
+ <use img/lip.jpg>
+Package pdftex.def Info: img/lip.jpg used on input line 190.
+(pdftex.def)             Requested size: 181.18439pt x 135.48055pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+[20 <./img/lip.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+
+ []
+
+) [22]
 CHAPTER 5.
 (./inverted.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--9
@@ -809,33 +950,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[20
+[23
 
-] <img/image0c.jpg, id=490, 963.6pt x 722.7pt>
+] <img/image0c.jpg, id=532, 963.6pt x 722.7pt>
 File: img/image0c.jpg Graphic file (type jpg)
  <use img/image0c.jpg>
 Package pdftex.def Info: img/image0c.jpg used on input line 28.
 (pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
-[21 <./img/image0c.jpg>] [22] [23] [24] [25] [26]
+[24 <./img/image0c.jpg>] [25] [26] [27] [28] [29]
 Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
-<img/feat_split.jpg, id=564, 963.6pt x 722.7pt>
+<img/feat_split.jpg, id=606, 963.6pt x 722.7pt>
 File: img/feat_split.jpg Graphic file (type jpg)
  <use img/feat_split.jpg>
 Package pdftex.def Info: img/feat_split.jpg used on input line 265.
 (pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 )
-[27] [28 <./img/feat_split.jpg>]
+[30] [31 <./img/feat_split.jpg>]
 CHAPTER 6.
 (./Data.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-[29
+[32
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
@@ -847,105 +988,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<img/all.jpg, id=581, 481.8pt x 361.35pt>
+<img/all.jpg, id=622, 481.8pt x 361.35pt>
 File: img/all.jpg Graphic file (type jpg)
  <use img/all.jpg>
 Package pdftex.def Info: img/all.jpg used on input line 45.
 (pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
 
-<img/min.jpg, id=582, 481.8pt x 361.35pt>
+<img/min.jpg, id=623, 481.8pt x 361.35pt>
 File: img/min.jpg Graphic file (type jpg)
  <use img/min.jpg>
 Package pdftex.def Info: img/min.jpg used on input line 51.
 (pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
 
-<img/feature.jpg, id=583, 481.8pt x 361.35pt>
+<img/feature.jpg, id=624, 481.8pt x 361.35pt>
 File: img/feature.jpg Graphic file (type jpg)
  <use img/feature.jpg>
 Package pdftex.def Info: img/feature.jpg used on input line 57.
 (pdftex.def)             Requested size: 317.07614pt x 237.81354pt.
- [30]
-[31 <./img/all.jpg> <./img/min.jpg>] [32 <./img/feature.jpg>]) [33]
+ [33]
+[34 <./img/all.jpg> <./img/min.jpg>] [35 <./img/feature.jpg>]) [36]
 CHAPTER 7.
-(./Experiment.tex <img/image1.jpg, id=602, 678.535pt x 315.1775pt>
+(./Experiment.tex <img/image1.jpg, id=644, 678.535pt x 315.1775pt>
 File: img/image1.jpg Graphic file (type jpg)
 
 <use img/image1.jpg>
 Package pdftex.def Info: img/image1.jpg used on input line 18.
 (pdftex.def)             Requested size: 452.9679pt x 210.39835pt.
- [34
+ [37
 
-] <img/image8.jpg, id=609, 607.26875pt x 341.275pt>
+] <img/image8.jpg, id=650, 607.26875pt x 341.275pt>
 File: img/image8.jpg Graphic file (type jpg)
 
 <use img/image8.jpg>
 Package pdftex.def Info: img/image8.jpg used on input line 30.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- [35 <./img/image1.jpg>]
-<img/image2.jpg, id=618, 684.5575pt x 348.30125pt>
+ [38 <./img/image1.jpg>]
+<img/image2.jpg, id=659, 684.5575pt x 348.30125pt>
 File: img/image2.jpg Graphic file (type jpg)
  <use img/image2.jpg>
 Package pdftex.def Info: img/image2.jpg used on input line 51.
 (pdftex.def)             Requested size: 452.9679pt x 230.47478pt.
 
-<img/image3.jpg, id=619, 607.26875pt x 377.41pt>
+<img/image3.jpg, id=660, 607.26875pt x 377.41pt>
 File: img/image3.jpg Graphic file (type jpg)
  <use img/image3.jpg>
 Package pdftex.def Info: img/image3.jpg used on input line 59.
 (pdftex.def)             Requested size: 452.9679pt x 281.5192pt.
 
-<img/image4.jpg, id=620, 683.55376pt x 340.27126pt>
+<img/image4.jpg, id=661, 683.55376pt x 340.27126pt>
 File: img/image4.jpg Graphic file (type jpg)
  <use img/image4.jpg>
 Package pdftex.def Info: img/image4.jpg used on input line 67.
 (pdftex.def)             Requested size: 452.9679pt x 225.48833pt.
 
-<img/image7.jpg, id=621, 607.26875pt x 341.275pt>
+<img/image7.jpg, id=662, 607.26875pt x 341.275pt>
 File: img/image7.jpg Graphic file (type jpg)
  <use img/image7.jpg>
 Package pdftex.def Info: img/image7.jpg used on input line 77.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- [36 <./img/image8.jpg>] [37 <./img/image2.jpg> <./img/image3.jpg>] [38 <./img/
-image4.jpg> <./img/image7.jpg>] <img/image5.jpg, id=635, 607.26875pt x 341.275p
+ [39 <./img/image8.jpg>] [40 <./img/image2.jpg> <./img/image3.jpg>] [41 <./img/
+image4.jpg> <./img/image7.jpg>] <img/image5.jpg, id=678, 607.26875pt x 341.275p
 t>
 File: img/image5.jpg Graphic file (type jpg)
 
 <use img/image5.jpg>
 Package pdftex.def Info: img/image5.jpg used on input line 94.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- <img/image6.jpg, id=636, 607.26875pt x 341.275pt>
+ <img/image6.jpg, id=679, 607.26875pt x 341.275pt>
 File: img/image6.jpg Graphic file (type jpg)
 
 <use img/image6.jpg>
 Package pdftex.def Info: img/image6.jpg used on input line 107.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- <img/image9.jpg, id=637, 607.26875pt x 341.275pt>
+ <img/image9.jpg, id=680, 607.26875pt x 341.275pt>
 File: img/image9.jpg Graphic file (type jpg)
 
 <use img/image9.jpg>
 Package pdftex.def Info: img/image9.jpg used on input line 114.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- [39 <./img/image5.jpg>] [40 <./img/image6.jpg> <./img/image9.jpg>] <img/imageI
-1.jpg, id=650, 607.26875pt x 341.275pt>
+ [42 <./img/image5.jpg>] [43 <./img/image6.jpg> <./img/image9.jpg>] <img/imageI
+1.jpg, id=692, 607.26875pt x 341.275pt>
 File: img/imageI1.jpg Graphic file (type jpg)
 
 <use img/imageI1.jpg>
 Package pdftex.def Info: img/imageI1.jpg used on input line 137.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- <img/imageI2.jpg, id=653, 607.26875pt x 341.275pt>
+ <img/imageI2.jpg, id=695, 607.26875pt x 341.275pt>
 File: img/imageI2.jpg Graphic file (type jpg)
 
 <use img/imageI2.jpg>
 Package pdftex.def Info: img/imageI2.jpg used on input line 152.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
- [41 <./img/imageI1.jpg>]
-<img/imageI3.jpg, id=658, 607.26875pt x 341.275pt>
+ [44 <./img/imageI1.jpg>]
+<img/imageI3.jpg, id=700, 607.26875pt x 341.275pt>
 File: img/imageI3.jpg Graphic file (type jpg)
  <use img/imageI3.jpg>
 Package pdftex.def Info: img/imageI3.jpg used on input line 159.
 (pdftex.def)             Requested size: 452.9679pt x 254.56523pt.
 
-[42 <./img/imageI2.jpg> <./img/imageI3.jpg>]
+[45 <./img/imageI2.jpg> <./img/imageI3.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
@@ -955,34 +1096,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-[43] <img/imageC1.jpg, id=673, 715.67375pt x 507.8975pt>
+[46] <img/imageC1.jpg, id=715, 715.67375pt x 507.8975pt>
 File: img/imageC1.jpg Graphic file (type jpg)
  <use img/imageC1.jpg>
 Package pdftex.def Info: img/imageC1.jpg used on input line 251.
 (pdftex.def)             Requested size: 339.72592pt x 241.09882pt.
 
-[44 <./img/imageC1.jpg>] <img/imageC2.jpg, id=681, 721.69624pt x 513.92pt>
+[47 <./img/imageC1.jpg>] <img/imageC2.jpg, id=723, 721.69624pt x 513.92pt>
 File: img/imageC2.jpg Graphic file (type jpg)
 
 <use img/imageC2.jpg>
 Package pdftex.def Info: img/imageC2.jpg used on input line 263.
 (pdftex.def)             Requested size: 339.72592pt x 241.91882pt.
- <img/imageC3.jpg, id=682, 712.6625pt x 505.89pt>
+ <img/imageC3.jpg, id=724, 712.6625pt x 505.89pt>
 File: img/imageC3.jpg Graphic file (type jpg)
 
 <use img/imageC3.jpg>
 Package pdftex.def Info: img/imageC3.jpg used on input line 270.
 (pdftex.def)             Requested size: 339.72592pt x 241.15707pt.
- [45 <./img/imageC2.jpg> <./img/imageC3.jpg>]) [46]
+ [48 <./img/imageC2.jpg> <./img/imageC3.jpg>]) [49]
 CHAPTER 8.
-(./conc.tex) [47
+(./conc.tex) [50
 
 ] (./thesis.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
- [48
+ [51
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
@@ -990,17 +1131,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A21620ED594722A64A1FF06AF0CE8AFC;2566.
+(rerunfilecheck)             Checksum: 05AAF77CA36A0E86C92C401418AF041A;2594.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 10423 strings out of 494985
- 147202 string characters out of 6180356
- 254615 words of memory out of 5000000
- 13204 multiletter control sequences out of 15000+600000
+ 10460 strings out of 494985
+ 147723 string characters out of 6180356
+ 255038 words of memory out of 5000000
+ 13216 multiletter control sequences out of 15000+600000
  27368 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 43i,8n,40p,1447b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,15n,40p,1451b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1012,10 +1153,10 @@ cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (57 pages, 1111656 bytes).
+Output written on thesis.pdf (60 pages, 1159586 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 694 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
- 443 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 844 PDF objects out of 1000 (max. 8388607)
+ 735 compressed objects within 8 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 448 words of extra memory for PDF output out of 10000 (max. 10000000)
 

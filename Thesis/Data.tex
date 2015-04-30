@@ -1,8 +1,8 @@
-Before we get to the experiments, we will describe the data in this chapter. To get some more insight in to the behaviour of the indexing techniques that we are applying, we perform further analysis of the dat in the hope of getting some useful explanations. We want to ascertain that a typical fingerprint dataset is high dimensional and highly sparse almost follwing a power law sort of distribution with very few features occuring in almost all the points in the chemical database while majority of the features have a non-zero value in very few points. We want to extract patterns in the data which could be exploited for range search querying and point querying.\\
+Before we get to the experiments, we will describe the data in this chapter. To get some more insight in to the behaviour of the indexing techniques that we are applying, we perform further analysis of the data in the hope of getting some useful explanations. We want to ascertain that a typical fingerprint dataset is high dimensional and highly sparse almost following a power law sort of distribution with very few features occurring in almost all the points in the chemical database while majority of the features have a non-zero value in very few points. We want to extract patterns in the data which could be exploited for range search querying and point querying.\\
 
 \section{Experiment Datasets}
 
-The two real world datasets we have explored in this work are from PubChem and DUD. PubChem is a database of chemical compounds and a record of their activities and reactions against agents. It is maintained National Center for Biotechnology Information (NCBI), a component of the National Library of Medicine, which is part of the United States National Institutes of Health (NIH). We have taken a subset of compounds from their database for our experiments. We are using both binary and non-binary fingerprints which have been created using fingerprinting techniques applied on the chemical compound data from their databases. DUD is a directory of useful decoys for benchmarking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially avaiilable compounds. 
+The two real world datasets we have explored in this work are from PubChem and DUD. PubChem is a database of chemical compounds and a record of their activities and reactions against agents. It is maintained National Center for Biotechnology Information (NCBI), a component of the National Library of Medicine, which is part of the United States National Institutes of Health (NIH). We have taken a subset of compounds from their database for our experiments. We are using both binary and non-binary fingerprints which have been created using fingerprinting techniques applied on the chemical compound data from their databases. DUD is a directory of useful decoys for benchmarking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially available compounds. 
 
 MOL2 is the primary molecule format used for the representation of chemical compounds. The MOL2 file displays information specifically about the following, Atom, Molecule, Bond, Substructure and Set. The atom record provides information about the atom names, types, coordinates, and partial charges. The molecule entry recognizes information about the molecule name and number of atoms, bonds, substructures and sets. Similarly the bond information displays the atom identifiers for every bond and the substructure record identifies types of significant substructures seen.To extract fingerprints we have used MOLPRINT2D, a molecular fingerprinting technique.
 
@@ -11,11 +11,11 @@ We will referring to the binary and non-binary versions of the PubChem datasets 
 
 
 \section{A Typical Fingerprint Dataset Analysis}
-We perform a detailed analysis of the data from  PubChem -n to figure out the kind of indexing technique, which needs to be used to optimize our searching time. The statistics that were extracted from the data are as follows:\\
+We perform a detailed analysis of the data from  PubChem-n to figure out the kind of indexing technique, which needs to be used to optimize our searching time. The statistics that were extracted from the data are as follows:\\
 
 \begin{table}[ht!]
 \centering
-\caption{Statistics of Data}
+\caption{Data Analysis: Statistics of the dataset PubChem-n}
 \begin{tabular}{|l|c|}
 \hline 
 Number of data points & 264016 \\ 
@@ -43,25 +43,25 @@ From this we can observe that the data is highly sparse with only about 271 feat
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/all.jpg}
-\caption{All pair distances}
+\caption{Data Analysis: All pair distances}
 \end{figure}
 %\pagebreak
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/min.jpg}
-\caption{Distance of the closest point}
+\caption{Data Analysis: Distance of the closest point}
 \end{figure}
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/feature.jpg}
-\caption{Feature distribution}
+\caption{Data Analysis: Feature distribution}
 \end{figure}
 
 
 \section{Observations on the Data}
 
-We can observe from the data is that them being in high dimension, the points are very much spread out, and hence most of them are equidistant from each other
+We can observe from the data is that them being in high dimension, the points are very much spread out, and hence most of them are equidistant from each other.
 The closest point for most of the points is at distance much greater than 0.4. in fact only 0.007\% of the points have their 1-NN within a distance of 0.4.
 
 The distribution of features among the data points seem to follow a power law distribution (though we have not tried to regress the plot to a function, this is commonly assumed for chemical data)  i.e., even though we have many features only a hand full of them are repeated in most of the points.

@@ -97,9 +97,13 @@ Instead of randomly choosing pivots at every step we use a Max-Min distance appr
 
 \end{enumerate} 
 
-We can observe that this is a very expensive procedure since we are scanning the entire database at every step. We need to compute an all pair similarity initially. At the $i^{th}$ step , the remaining n-i+1 points in  database need to compute its minimum distance to the i-1 points already present in pivot step. Finally choose the point among the n-i+1 points with the maximum distance. This computation is of the O($n^3$).
-	\[T(n)=  n^2 + \sum \limits_{i=1}^{n}( (n-i+1)(i-1)  + n-i+1) \]
-	\[T(n)=O(n^3)\]
+We can observe that this is a very expensive procedure since we are scanning the entire database at every step. We need to compute an all pair similarity initially. At the $i^{th}$ step , the remaining n-i+1 points in  database need to compute its minimum distance to the i-1 points already present in pivot step. Finally choose the point among the n-i+1 points with the maximum distance. This computation is of the O($n^3$).\\
+	\begin{equation}
+	T(n)=  n^2 + \sum \limits_{i=1}^{n}( (n-i+1)(i-1)  + n-i+1) 
+	\end{equation}
+	\begin{equation}
+	T(n)=O(n^3)
+	\end{equation}
 
 We use a sampling technique where we randomly sample a subset of the database and apply the technique described above on the subset. We used a subset size of $\frac{1}{10^{th}}$ the size of the database, approximately about 20,000 points in the subset.
 
@@ -147,22 +151,106 @@ Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find
 
 \section{Lipschitz Embedding}
 
-The performance of the M-tree is limited by the fact that the data is very sparse. This results in very loose clusters being formed during the indexing phase. To improve upon this we performed an embedding of the data into Euclidean space using Lipschitz embedding. Lipshcitz embedding results in a contractive mapping.\\
+The performance of the M-tree is limited by the fact that the data is very sparse. This results in very loose clusters being formed during the indexing phase. To improve upon this we performed an embedding of the data into Euclidean space using Lipschitz embedding. Lipschitz embedding results in a contractive mapping.\\
 
 Lipschitz embedding is the embedding, or in simpler words, dimensionality reduction of the objects of
-a database D with metric distance d onto a k-dimensional feature vector space. The procedure goes as follows:
+a database D with metric distance d onto a k-dimensional feature vector space. The procedure goes as follows:\\
 \begin{enumerate}
 	\item Choose k subsets of D
 	\item Each subset $A_i$ is a reference set
-	\item Let the distance of object $p_j$ to set $A_i$ be:
-	\[ d(p_j,A_i)= min_{a\epsilon A_{i}}      d(p_j,a) \]
-	\item The feature vector f(o) is then defined as:
-	\[f(p_j)= {\frac{d(p_j,A_1)}{k},\frac{d(p_j,A_2)}{k}...\frac{d(p_j,A_k)}{k}} \]
-	\item We define the new distance $d'(f(p_j),f(p_k))$ as :
-	\[d'(f(p_j),f(p_k)) = \sum \limits_{i=1}^{k} | d(p_j,A_i)-d(p_k,A_i)|\] 
+	\item Let the distance of object $p_j$ to set $A_i$ be:\\
+	\begin{equation}
+	 d(p_j,A_i)= min_{a\epsilon A_{i}} d(p_j,a) 
+	\end{equation}
+
+	\item The feature vector f(o) is then defined as:\\
+	\begin{equation}
+	\label{lip1}
+	f(p_j)= {\frac{d(p_j,A_1)}{k},\frac{d(p_j,A_2)}{k}...\frac{d(p_j,A_k)}{k}} 
+	\end{equation}
+
+	\item We define the new distance $d'(f(p_j),f(p_k))$ as :\\
+	\begin{equation}
+	\label{lip2}
+	d'(f(p_j),f(p_k)) =\frac{1}{k} \sum \limits_{i=1}^{k} | d(p_j,A_i)-d(p_k,A_i)| 
+	\end{equation}
+
+	We notice that the new distance measure is the $L_1$ norm in the new space.
+	
+	\begin{equation}
+	\label{eq:L1}
+	L_1(f(p_j),f(p_k)) ~~= \sum \limits_{i=1}^{k} | \frac{d(p_j,A_i)}{k}-\frac{d(p_k,A_i)}{k} | ~~=  \frac{1}{k} \sum \limits_{i=1}^{k} | d(p_j,A_i)-d(p_k,A_i)|  ~~= d'(f(p_j),f(p_k))
+	\end{equation}
 \end{enumerate}
 
-	We chose the reference sets in our embedding procedure as singleton sets. The choice of these points is done such that they are maximally far apart, i.e., the average and minimum all pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the heuristic that farthest point will be maximally representative of the dataset. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
+
+
+\begin{figure}[ht!]	
+\centering
+\includegraphics[width=0.4 \columnwidth]{img/lip.jpg}
+\caption{Lipschitz: Contractive mapping}
+\label{fig: lip}
+\end{figure}
+
+
+\begin{thm}
+\label{th0}
+A Lipschitz embedding produces a contractive mapping i.e. a Lipschitz embedding of the form $o_i \Rightarrow f(o_i)$ with $f(o_i)$ as defined in \autoref{lip1} and a new distance measure $d'$ as defined in \autoref{lip2} ensures the following:\\
+
+\begin{equation}
+	d'(f(o_i),f(o_j)) < d(o_i, o_j)~ \forall ~ i,j
+\end{equation} 
+
+\end{thm}
+
+\begin{proof}
+	
+Consider any arbitrary reference set $A_l$.\\
+\begin{equation}
+\exists a_1 \in A_l, d(o_1, A_l) = d(o_1, a_1)
+\end{equation}
+\begin{equation}
+\exists a_2 \in A_l, d(o_2, A_l) = d(o_2, a_2)
+\end{equation}
+
+as seen in \autoref{fig: lip}.
+
+Now consider $|d(o_1, A_l)-d(o_2, A_l)|$\\
+
+\begin{equation}
+\label{der1}
+\begin{split}
+|d(o_1, A_l)-d(o_2, A_l)| & = |d(o_1, a_1)-d(o_2, a_2)|  \\
+ 					& = max(d(o_1, a_1)-d(o_2, a_2),d(o_2, a_2)-d(o_1, a_1))\\
+ 					& \leq  max(d(o_1, a_2)-d(o_2, a_2),d(o_2, a_1)-d(o_1, a_1))\\
+ 					& \leq d(o_1,o_2)
+\end{split}
+\end{equation}
+
+Now consider $d'(f(o_i),f(o_j))$ and using \autoref{lip2} and \autoref{der1}\\
+
+\begin{equation}
+\label{der2}
+\begin{split}
+d'(f(o_i),f(o_j)) & = \frac{1}{k} \sum \limits_{l=1}^{k} | d(o_i,A_l)-d(o_j,A_l)| \\
+				& \leq \frac{1}{k} \sum \limits_{l=1}^{k} d(o_i,o_j) \\
+				& \leq \frac{1}{k} (k d(o_i,o_j)) \\
+				& \leq d(o_i,o_j)
+\end{split}
+\end{equation}
+
+Hence proved that Lipschitz embedding is a contractive mapping.
+\end{proof}
+
+\begin{thm}
+A Lipschitz embedding of the form $o_i \Rightarrow f(o_i)$ with $f(o_i)$ as defined in \autoref{lip1} and a new distance measure $d'$ as defined in \autoref{lip2} ensures that the new distance measure $d'$ is a metric in the new space.
+\end{thm}
+
+\begin{proof}
+We have already shown from \autoref{eq:L1} that $d'$ is equivalent to the $L_1$ norm in the new space. Since we know that $L_1$ norm is a metric, it follows the new distance measure $d'$ is also metric in the new space.
+\end{proof}
+
+We have chosen the reference sets in our embedding procedure as singleton sets. The choice of these points is done such that they are maximally far apart, i.e., the average and minimum all pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the heuristic that farthest point will be maximally representative of the dataset. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
 
 \begin{enumerate}
 	\item Choose a random pivot from a sampled set of  data set points
@@ -176,4 +264,12 @@ a database D with metric distance d onto a k-dimensional feature vector space. T
 	\item Repeat step 3-4 until Reference set is full\\
 \end{enumerate}
 
-The dimension of the embedded space for the Swamidass dataset was chosen to be 514, which is the square root of the total number of points in the data set.We then performed M-tree based indexing and searching on this dataset. Our performance had deteriorated from that of the baseline technique.
+
+Using Lipschitz embedding we propose the following indexing and range search process:
+\begin{enumerate}
+	\item Embed the dataset using Lipschitz embedding and the pivoting method described above.
+	\item Follow the M-tree based indexing process but in this new embedded space.
+	\item Carry out the range search to compute the candidate set.  Since from Theorem \autoref{th0}, we know that Lipschitz is contractive we are assured to have our candidate set as a super set of the actual range search result .
+	\item We know undergo a similarity computation of all the points in the candidate set to the query in the original space to verify if the candidate point is not a false positive.
+\end{enumerate}
+Our performance had deteriorated from that of the baseline technique. This is probably because the candidate set which we compute in step 3 is very large and we end up computing similarity for a lot of false positives.

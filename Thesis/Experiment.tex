@@ -1,12 +1,12 @@
 
 In our experiments, we evaluated our indexing techniques on two real world datasets. We have compared our indexing techniques by comparing the running time with that of the state of the art technique  . We are also concerned about the indexing time, especially for the M-tree index structure since we do not want our index procedure to run into hours.
 
-The first dataset is the PubChem(-n and -b) dataset . The second dataset is from DUD, a directory of useful decoys for benchmarking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially avaiilable compounds. To extarct fingerprints we used MOLPRINT2D, a molecular fingerprinting technique.
+The first dataset is the PubChem(-n and -b) dataset . The second dataset is from DUD, a directory of useful decoys for benchmarking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially available compounds. To extract fingerprints we used MOLPRINT2D, a molecular fingerprinting technique.
 
 
 \section{M-tree based Indexing analysis}	
 
-For these set of experiments the test bed used was a 4 Intel(R) Core(TM) i7-4770 CPU \@ 3.40GHz with 8GB RAM. We have varied several parameters in the experiment and have tried to estimate them emperically. We have used the PubChem-n dataset for all analysis of the M-tree. We use different dataset sizes of 1000, 10,000 and 100,000 number of chemical compounds.
+For these set of experiments the test bed used was a 4 Intel(R) Core(TM) i7-4770 CPU \@ 3.40GHz with 8GB RAM. We have varied several parameters in the experiment and have tried to estimate them empirically. We have used the PubChem-n dataset for all analysis of the M-tree. We use different dataset sizes of 1000, 10,000 and 100,000 number of chemical compounds.
 
 For evaluation purposes we implemented a linear brute force scan to compute the range query and used that as a benchmark for the results. The result set obtained from our technique was compared with the linear brute scan answer set for verification purposes using the fingerprint id's. The query time and the indexing time is averaged over the 500 random query sample data points and the unit in ms per compound. We have varied the following parameters .
 
@@ -33,7 +33,7 @@ As seen in \ref{fig:5.1} we can observe that the range search query time is almo
 \end{figure}
 
 
-Ideally, indexing time should decrease with increase in number of limiting outlier size. This is because the depth of the M-tree grows with increase in the limitng size of the outlier set. The indexing process is a recursive procedure and termination occurs only when the size of the outlier set falls below the given limiting size. Hence in normal circumstances the indexing time must decrease as we increase the limiting size, but as seen in \autoref{fig:5.2} the decrease is minimal and changing \textit{o} doesn't change the indexing time much. 
+Ideally, indexing time should decrease with increase in number of limiting outlier size. This is because the depth of the M-tree grows with increase in the limiting size of the outlier set. The indexing process is a recursive procedure and termination occurs only when the size of the outlier set falls below the given limiting size. Hence in normal circumstances the indexing time must decrease as we increase the limiting size, but as seen in \autoref{fig:5.2} the decrease is minimal and changing \textit{o} doesn't change the indexing time much. 
 
 
 
@@ -43,13 +43,13 @@ Ideally, indexing time should decrease with increase in number of limiting outli
 \subsection{Pivot Set size}
 The pivot set size as described earlier is the number of random pivots chosen at each step of the indexing process (p). \textit{p} determines the number of nodes at every level of the index structure. The number of nodes at each level is equal to p+1.
 
-\autoref{fig:5.3},\autoref{fig:5.4},\autoref{fig:5.5}  show how the range search query time varies versus different distance threshold for different sizes of the pivot set for databases of size 1,000 , 10,000 and 100,000 compounds respectively. We can observe the time is almost similar at high threshold values for different number of pivots. For low theshold values we are succesfully able to prune away all many nodes using triangle inequality. 
+\autoref{fig:5.3},\autoref{fig:5.4},\autoref{fig:5.5}  show how the range search query time varies versus different distance threshold for different sizes of the pivot set for databases of size 1,000 , 10,000 and 100,000 compounds respectively. We can observe the time is almost similar at high threshold values for different number of pivots. For low threshold values we are successfully able to prune away all many nodes using triangle inequality. 
 
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image2.jpg}
-\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 1k database}
+\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 1k PubChem-n database}
 \label{fig:5.3}
 \end{figure}
 
@@ -57,7 +57,7 @@ The pivot set size as described earlier is the number of random pivots chosen at
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image3.jpg}
-\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 10k database}
+\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 10k PubChem-n database}
 \label{fig:5.4}
 \end{figure}
 
@@ -65,7 +65,7 @@ The pivot set size as described earlier is the number of random pivots chosen at
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image4.jpg}
-\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 100k database}
+\caption{M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 100k PubChem-n database}
 \label{fig:5.5}
 \end{figure}
 
@@ -84,10 +84,10 @@ We observe that indexing time is increasing almost linearly with increase in the
 \subsection{Threshold Distance}
 As described in earlier sections, the range query distance threshold (t) is thse cutoff used for determining similarity. We observe that range search query time increases monotonically with threshold distance and begins to converge for higher values of threshold distance.  But this seems to hold true only if we use pivots above a particular threshold. 
 
-There are two extremes here. If we use a very high number of pivots most of the time is spent doing computation involving triangle inequality bounds and hence it is not favourable. Similarly if we choose a very low number of pivots, it is not possible to exploit the bounds effectively to decisively prune or include the subtrees from our answer result set. For low number of pivots used we notice that for high and low values of threshold the query time is lower than that for the middle range, where bounds doesn't help well enough.
+There are two extremes here. If we use a very high number of pivots most of the time is spent doing computation involving triangle inequality bounds and hence it is not favourable. Similarly if we choose a very low number of pivots, it is not possible to exploit the bounds effectively to decisively prune or include the sub-trees from our answer result set. For low number of pivots used we notice that for high and low values of threshold the query time is lower than that for the middle range, where bounds doesn't help well enough.
 
 
-As seen in \autoref{fig:5.7}, we observe that for low value of threshold at 0.1, the number of pivots to be chosen seems to have a minima between 500 and 1000 for a dataset size of 100k after which it increases . This is because there is a tradeoff between the time saved by pruning the subtrees versus the time utilized in checking if the nodes can be actually pruned.  For a high threshold value of 0.9 it can be seen that we require more number of pivots . 
+As seen in \autoref{fig:5.7}, we observe that for low value of threshold at 0.1, the number of pivots to be chosen seems to have a minima between 500 and 1000 for a dataset size of 100k after which it increases . This is because there is a trade-off between the time saved by pruning the sub-trees versus the time utilized in checking if the nodes can be actually pruned.  For a high threshold value of 0.9 it can be seen that we require more number of pivots . 
 
 \begin{figure}[ht!]	
 \centering
@@ -127,7 +127,7 @@ As seen in \autoref{fig:5.8} we can observe that the average indexing time per c
 
 \section{Inverted Indexing Analysis}
 
-For the below experiments the testbed used was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. We tested the inverted index structure against both binary as well as non-binary versions of the PubChem-n dataset. For evaluation and verification processes, a complete linear database scan was done as with the M-tree case to compare the result sets. One advantage of Inverted indexing procedure over the M-tree index structure is the much lesser time required for the indexing step. 
+For the below experiments the test-bed used was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. We tested the inverted index structure against both binary as well as non-binary versions of the PubChem-n dataset. For evaluation and verification processes, a complete linear database scan was done as with the M-tree case to compare the result sets. One advantage of Inverted indexing procedure over the M-tree index structure is the much lesser time required for the indexing step. 
 
 Indexing time per compound is observed to be almost constant between 1ms to 2ms per compound on average. As observed in \autoref{fig:5I1} the graph is almost straight parallel to the x-axis for both the binary as well as the non-binary dataset. This is in opposition to the M-tree index structure where the indexing time was increasing with increase in the dataset size. 
 
@@ -144,7 +144,7 @@ Indexing time per compound is observed to be almost constant between 1ms to 2ms 
 
 We also observe that the range query time for the binary version of the PubChem-n dataset is lesser compared to the non-binary version of the same dataset. This can be explained by more pruning of features in the binary dataset.
 
-Typically in fingerprint datasets searching is done for a reasonable threshold distance of 0.1 to 0.3 and the search query times uptil 0.3 distance is within a second per compound on average. The figures show that the indexing technique scales well on bigger datasets for low threshold values, better than it scales on higher theshold values.
+Typically in fingerprint datasets searching is done for a reasonable threshold distance of 0.1 to 0.3 and the search query times uptil 0.3 distance is within a second per compound on average. The figures show that the indexing technique scales well on bigger datasets for low threshold values, better than it scales on higher threshold values.
 
 
 \begin{figure}[ht]	
@@ -170,7 +170,7 @@ We have also experimented the mentioned improvisations in the Inverted Indexing 
 
 We have compared the three techniques, namely the M-tree indexing technique , the Inverted Indexing technique and the bit bounding technique described in \citet*{swamidass2007bounds}. We have used the PubChem-n, PubChem-b and DUD datasets for our evaluations. A test set of 500 compounds were chosen randomly from the datasets for evaluation purposes. For the experiments, the testbed was a server with 512GB RAM, 24TB disk space, and 2 quad core Xeon processor. 
 
-As observed in \autoref{tab: table1}, comparison of the techniques on the PubChem-b dataset showed for a very low threshold value the M-tree index showed the most promising results, achieving upto two times the speed of the bit bound technique. The inverted index is also able to achieve 2-3 times speedup compared to the bit bound technique. \\
+As observed in \autoref{tab: table1}, comparison of the techniques on the PubChem-b dataset showed for a very low threshold value the M-tree index showed the most promising results, achieving upto two times the speed of the bit bound technique. The inverted index is also able to achieve 2-3 times speed-up compared to the bit bound technique. \\
 
 
 
@@ -272,5 +272,5 @@ Comparison on the DUD dataset showed that the inverted indexing technique was ab
 \label{fig:5C3}
 \end{figure}
 
-Comparing the M-tree index structure with inverted index technique, we observe the following: The indexing time  per compound on average is constant for the inverted index structure while it varies linearly with size of the dataset for the M-tree. The runtimes for range search queries tends to converge for both the methods as we go towards higher threshold values. The M-tree index shows a sudden increase in runtime for range query at around 0.3 while the curve for the inverted index is smoother. Also, if we were to include a new point into the chemical database the inverted index structure would be simpler since we would just need to update the corresponding feature lists while we would have to undergo a re-indexing for the M-tree index since it would be difficult to add the point randomly into the tree structure.
+Comparing the M-tree index structure with inverted index technique, we observe the following: The indexing time  per compound on average is constant for the inverted index structure while it varies linearly with size of the dataset for the M-tree. The run-times for range search queries tends to converge for both the methods as we go towards higher threshold values. The M-tree index shows a sudden increase in runtime for range query at around 0.3 while the curve for the inverted index is smoother. Also, if we were to include a new point into the chemical database the inverted index structure would be simpler since we would just need to update the corresponding feature lists while we would have to undergo a re-indexing for the M-tree index since it would be difficult to add the point randomly into the tree structure.
 

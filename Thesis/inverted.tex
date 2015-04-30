@@ -150,7 +150,7 @@ we can prune the feature $f_1$
 	\frac{j+1}{N_q - 1 + min(V_{i}, \rho)} < 1-t 
 	\end{equation}
 	
-where 	$\rho$ is the minimum  number of features present in any point containing atleast one of the features pruned uptil now i.e $\rho = \min\limits_{k\in R} V_k$
+where 	$\rho$ is the minimum  number of features present in any point containing atleast one of the features pruned until now i.e $\rho = \min\limits_{k\in R} V_k$
 
 	\item This process is continued till we reach the end of the sorted feature list.
 	
@@ -160,12 +160,12 @@ where 	$\rho$ is the minimum  number of features present in any point containing
 
 The main idea behind the use of the greedy algorithm is to prune as many as points as possible. Hence the sorting of the features in order of their popularity. We also tried sorting based on other scores but none gave as good as the results obtained by using popularity for sorting. 
 
-Consider the pruning process. If say we prune $f_l$ we need to consider features uptil $f_{l-1}$ which we have pruned till now. Lets say there is a point $p_o$ which also has a feature not seen till now , say $f_{l+q}, q\in(1,M-l)$ . We do not care about such points since they would be considered in the candidate set for out range search query if in the future $f_{l+q}$ is not pruned. We only care for those points which would not be present in any further features beyond feature $f_l$. 
+Consider the pruning process. If say we prune $f_l$ we need to consider features until $f_{l-1}$ which we have pruned till now. Lets say there is a point $p_o$ which also has a feature not seen till now , say $f_{l+q}, q\in(1,M-l)$ . We do not care about such points since they would be considered in the candidate set for out range search query if in the future $f_{l+q}$ is not pruned. We only care for those points which would not be present in any further features beyond feature $f_l$. 
 
 \section{Extension to non-binary fingerprints}	
 \label{sec:prune2}
 
-We can extend Theorem 1 and Theorem 2 to non-binary fingerprints as follows:
+We can extend Theorem 3 and Theorem 4 to non-binary fingerprints as follows:
 
 %%%%
 
@@ -267,4 +267,4 @@ Another technique we considered for the binary dataset is the splitting of the h
 \label{fig:split}
 \end{figure}
 
-\autoref{fig:split} shows the number of features versus every point present for two heavy hitting features. It can be observed that the curve is almost linear, hence intuitively we wouldn't get a very large increase in the minimum number of features for the larger set of points.In \autoref{fig:split}, we can observe two lines \textit{a} and \textit{b}. If we were to split at \textit{a}(into approximately two equal sets) after sorting, our pruning bound would have a lower chance of getting  satisfied while if we were to cut at \textit{b}(at about 90\% to 10\%) we would have a better chance of pruning the set containing the top 10 percent of the points.
+\autoref{fig:split} shows the number of features versus every point present for two heavy hitting features. It can be observed that the curve is almost linear, hence intuitively we wouldn't get a very large increase in the minimum number of features for the larger set of points.In \autoref{fig:split}, we can observe two lines \textit{a} and \textit{b}. If we were to split at \textit{a}(into approximately two equal sets) after sorting, our pruning bound would have a lower chance of getting  satisfied while if we were to cut at \textit{b} d(at about 90\% to 10\%) we would have a better chance of pruning the set containing the top 10 percent of the points. We were unable to get desirable results with the splitting the features method.
