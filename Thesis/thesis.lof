@@ -23,12 +23,12 @@
 \contentsline {figure}{\numberline {7.5}{\ignorespaces M-tree: Average Range Query time versus Distance Threshold for various sizes of pivot set - 100k PubChem-n database\relax }}{41}{figure.caption.22}
 \contentsline {figure}{\numberline {7.6}{\ignorespaces M-tree: Indexing time versus different sizes of pivot set size\relax }}{41}{figure.caption.23}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces M-tree: Average Range Query time versus various sizes of pivot set for different threshold distances\relax }}{42}{figure.caption.24}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces M-tree: Indexing time versus dataset size\relax }}{43}{figure.caption.25}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces M-tree: Range Query time versus dataset size\relax }}{43}{figure.caption.26}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Inverted Index: Indexing time versus dataset size for Inverted Indexing\relax }}{44}{figure.caption.27}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Inverted Index: Range Query time versus Distance threshold for different dataset sizes- PubChem-b dataset\relax }}{45}{figure.caption.28}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Inverted Index: Range Query time versus Distance threshold for different dataset sizes- PubChem-n dataset\relax }}{45}{figure.caption.29}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Comparsion of techniques applied on the PubChem-n fingerprint dataset\relax }}{47}{figure.caption.33}
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Comparsion of techniques applied on the PubChem-b fingerprint dataset\relax }}{48}{figure.caption.34}
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Comparsion of techniques applied on the binary DUD dataset\relax }}{48}{figure.caption.35}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces M-tree: Indexing time versus data-set size\relax }}{43}{figure.caption.25}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces M-tree: Range Query time versus data-set size\relax }}{43}{figure.caption.26}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Inverted Index: Indexing time versus data-set size for Inverted Indexing\relax }}{44}{figure.caption.27}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Inverted Index: Range Query time versus Distance threshold for different data-set sizes- PubChem-b data-set\relax }}{45}{figure.caption.28}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Inverted Index: Range Query time versus Distance threshold for different data-set sizes- PubChem-n data-set\relax }}{45}{figure.caption.29}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Comparison of techniques applied on the PubChem-n fingerprint data-set\relax }}{47}{figure.caption.33}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Comparison of techniques applied on the PubChem-b fingerprint data-set\relax }}{48}{figure.caption.34}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Comparison of techniques applied on the binary DUD data-set\relax }}{48}{figure.caption.35}
 \addvspace {10\p@ }

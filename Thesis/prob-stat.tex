@@ -2,10 +2,10 @@
 \section{Problem Statement}
 
 As the title suggests we are interested in fast indexing and searching of chemical fingerprints. We want to propose new indexing techniques which build on current indexing data structures and which will make searching for chemical compounds in the database faster. Our primary goal is to be able to perform queries on our compound database as fast as possible.
-We are looking at accurate searching of similar compounds when given a query compound. The similarity of chemical fingerprints is established using the Min-Max distance which is the generalization of Tanimoto distance for non-binary datasets (explained in the next section). We are dealing with exact similarity match and not approximate similarity. We will be looking at different types of queries, namely the range, point and top-k queries.\\
+We are looking at accurate searching of similar compounds when given a query compound. The similarity of chemical fingerprints is established using the Min-Max distance which is the generalization of Tanimoto distance for non-binary data-sets (explained in the next section). We are dealing with exact similarity match and not approximate similarity. We will be looking at different types of queries, namely the range, point and top-k queries.\\
 
 \begin{problem}{
-Range queries on a chemical dataset can be defined as the process where, when given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a threshold distance \textbf{$'\theta'$} and a database of chemical compounds $D$, we find the subset $S \subset D$ of all fingerprints, such that: \\
+Range queries on a chemical data-set can be defined as the process where, when given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a threshold distance \textbf{$'\theta'$} and a database of chemical compounds $D$, we find the subset $S \subset D$ of all fingerprints, such that: \\
 \begin{equation}
 sim(f,g) < \theta ~~ \forall  \textbf{$g\in S$}
 \end{equation}
@@ -18,6 +18,6 @@ sim(f,g) < \theta ~~ \forall  \textbf{$g\in S$}
 
 Our aim as mentioned earlier is to come up with a novel indexing scheme which would make the aforementioned task faster. For range queries we would want to achieve sub-linear search time speeds.The challenge and novelty in our work comes from the fact that, unlike in  \citet*{swamidass2007bounds} and many other state of the art techniques developed in this domain, we are working on non-binary vector fingerprints. \\
 
-The indexing time i.e. the time required to index a compound on average is also a concern for us. For any new compound added to the database we would like to be able to add it easily to the index structure without undergoing any major time-consuming changes. We would like our algorithms to scale on large datasets so we will compare our average range search query times on different sizes of the dataset.\\
+The indexing time i.e. the time required to index a compound on average is also a concern for us. For any new compound added to the database we would like to be able to add it easily to the index structure without undergoing any major time-consuming changes. We would like our algorithms to scale on large data-sets so we will compare our average range search query times on different sizes of the data-set.\\
 
-An important thing to note here, which is also described in detail in \autoref{exact} is that we are looking at exact threshold similarity searches and not interested in approximate or probabilistic techniques. In the next section we explain properties of the standard similarity measure used in cheminfomatics to compare chemical fingerprints, the Tanimoto similarity and its extension to non-binary datasets as well as how it can be exploited well to our benefit. \\
+An important thing to note here, which is also described in detail in \autoref{exact} is that we are looking at exact threshold similarity searches and not interested in approximate or probabilistic techniques. In the next section we explain properties of the standard similarity measure used in cheminfomatics to compare chemical fingerprints, the Tanimoto similarity and its extension to non-binary data-sets as well as how it can be exploited well to our benefit. \\

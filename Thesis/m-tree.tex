@@ -1,6 +1,6 @@
 
 
-M-tree also known as the Metric tree is a tree data structure constructed using a metric distance measure and relies on the triangle inequality for efficient range search queries. Similar to all other tree data structures, an M-tree data structure also has Leaf Nodes and non- Leaf nodes. Every non leaf node has a pointer to its parent node, a pointer to its subtree, its object information and a covering radius denoting maximum distance of a node to any node in its subtree.Every leaf node keeps a pointer to its parent and object information.\\
+M-tree also known as the Metric tree is a tree data structure constructed using a metric distance measure and relies on the triangle inequality for efficient range search queries. Similar to all other tree data structures, an M-tree data structure also has Leaf Nodes and non- Leaf nodes. Every non leaf node has a pointer to its parent node, a pointer to its sub-tree, its object information and a covering radius denoting maximum distance of a node to any node in its sub-tree.Every leaf node keeps a pointer to its parent and object information.\\
 
 The M-tree data structure compartments the objects into nodes, which define regions of the metric space. The maximum capacity of the M-tree is M. For each database object to be indexed, there is an entry $O_j = [ O_j, id(O_j), dist(O_j , P(O_j )) ]$
 in some leaf node.  $O_j$ stores the object information, mainly the data point feature values or dimension coordinates, id($O_j$) stores the id of the object and $dist(O_j , P(O_j ))$ stores the distance of it to its parent object. \\
@@ -12,24 +12,24 @@ in some leaf node.  $O_j$ stores the object information, mainly the data point f
 \label{fig:4.0}
 \end{figure}
 
-A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a subtree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a subtree rooted at router object $O_r$ is at at-most $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
+A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a sub-tree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a sub-tree rooted at router object $O_r$ is at at-most $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
 
 
 
 
 \section{Information in the data structure}
 
-We use a modified data structure similar to the M-tree.We keep the following information in each node of the our modified M-tree: the object identifier of the pivot, i.e fingerprint information of the pivot fingerprint; the pivot also stores a pointer to its children i.e a pointer to a set of fingerprints; a double value which is the distance of the farthest child in its subtree and a boolean value which signifies if the pivot is an outlier pivot. We do not require a parent pointer. And the size of each node is determined by the number of pivots chosen at each step of our indexing technique and the base outlier size limit, which are explained later. The following information is stored in each entry of a node in our tree:
+We use a modified data structure similar to the M-tree.We keep the following information in each node of the our modified M-tree: the object identifier of the pivot, i.e fingerprint information of the pivot fingerprint; the pivot also stores a pointer to its children i.e a pointer to a set of fingerprints; a double value which is the distance of the farthest child in its sub-tree and a boolean value which signifies if the pivot is an outlier pivot. We do not require a parent pointer. And the size of each node is determined by the number of pivots chosen at each step of our indexing technique and the base outlier size limit, which are explained later. The following information is stored in each entry of a node in our tree:
 
 \begin{enumerate}
 	\item Object identifier $p_i$
-	\item Pointer to subtree $S_i$
+	\item Pointer to sub-tree $S_i$
 	\item Farthest child i.e. Covering radius $r_i$
 	\item Outlier pivot boolean variable
 \end{enumerate}
 
 \section{Baseline Indexing approach}
-In the baseline approach, we are partitioning the dataset into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
+In the baseline approach, we are partitioning the data-set into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
 
 \begin{figure}[ht]	
 \centering
@@ -131,9 +131,9 @@ We use a sampling technique where we randomly sample a subset of the database an
 Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find the set of chemical fingerprints which satisfy the query. We exploit the triangle inequality for the same. The procedure for range search querying can be described by the following steps\\
 
 \begin{enumerate}
-	\item The basic idea is to be able to prune subtrees based on the covering radius of the pivot of the subtree and the distance of the query to the pivot
+	\item The basic idea is to be able to prune sub-trees based on the covering radius of the pivot of the sub-tree and the distance of the query to the pivot
 	 
-	\item Let the query fingerprint be q and the fingerprint pivot be $p_i$ of subtree $S_i$. We can calculate the maximum distance of any node in $S_i$ from q.We start with the root of the tree as $p_i$
+	\item Let the query fingerprint be q and the fingerprint pivot be $p_i$ of sub-tree $S_i$. We can calculate the maximum distance of any node in $S_i$ from q.We start with the root of the tree as $p_i$
 	
 	\item Let the covering radius of pivot $p_i$ be $r_i$. Hence the maximum distance of any node in $S_i$ will be $dist(q,p_i)$ + $r_i$. Similarly the minimum distance of any node in $S_i$ is $max(dist(q,p_i)$ - $r_i, 0)$. 
 	
@@ -141,9 +141,9 @@ Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find
 	
 	\item  If the upper bound of the range or the maximum distance is lesser than the threshold distance $\theta$ we can add all the nodes in $S_i$ to our resultant set
 	
-	\item If the lower bound of the range is greater than the threshold distance $\theta$, we can prune the subtree $S_i$ since we can say with certainty that the distance of every node in the subtree $S_i$ is greater than  the threshold $\theta$.
+	\item If the lower bound of the range is greater than the threshold distance $\theta$, we can prune the sub-tree $S_i$ since we can say with certainty that the distance of every node in the sub-tree $S_i$ is greater than  the threshold $\theta$.
 	
-	\item If there is an intersection in the intervals we recursively apply this technique on the second level of children in the subtree $S_i$ until we reach a leaf node.
+	\item If there is an intersection in the intervals we recursively apply this technique on the second level of children in the sub-tree $S_i$ until we reach a leaf node.
 	
 \end{enumerate}
 
@@ -250,7 +250,7 @@ A Lipschitz embedding of the form $o_i \Rightarrow f(o_i)$ with $f(o_i)$ as defi
 We have already shown from \autoref{eq:L1} that $d'$ is equivalent to the $L_1$ norm in the new space. Since we know that $L_1$ norm is a metric, it follows the new distance measure $d'$ is also metric in the new space.
 \end{proof}
 
-We have chosen the reference sets in our embedding procedure as singleton sets. The choice of these points is done such that they are maximally far apart, i.e., the average and minimum all pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the heuristic that farthest point will be maximally representative of the dataset. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
+We have chosen the reference sets in our embedding procedure as singleton sets. The choice of these points is done such that they are maximally far apart, i.e., the average and minimum all pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the heuristic that farthest point will be maximally representative of the data-set. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
 
 \begin{enumerate}
 	\item Choose a random pivot from a sampled set of  data set points
@@ -267,7 +267,7 @@ We have chosen the reference sets in our embedding procedure as singleton sets. 
 
 Using Lipschitz embedding we propose the following indexing and range search process:
 \begin{enumerate}
-	\item Embed the dataset using Lipschitz embedding and the pivoting method described above.
+	\item Embed the data-set using Lipschitz embedding and the pivoting method described above.
 	\item Follow the M-tree based indexing process but in this new embedded space.
 	\item Carry out the range search to compute the candidate set.  Since from Theorem \autoref{th0}, we know that Lipschitz is contractive we are assured to have our candidate set as a super set of the actual range search result .
 	\item We know undergo a similarity computation of all the points in the candidate set to the query in the original space to verify if the candidate point is not a false positive.
