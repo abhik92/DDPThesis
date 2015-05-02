@@ -16,14 +16,15 @@
 \contentsline {section}{\numberline {4.5}Range Search Querying}{17}{section.4.5}
 \contentsline {section}{\numberline {4.6}Lipschitz Embedding}{19}{section.4.6}
 \contentsline {chapter}{\numberline {5}Inverted Index Structure}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}Point Query}{23}{section.5.1}
-\contentsline {section}{\numberline {5.2}Range Query and K-nn}{23}{section.5.2}
-\contentsline {section}{\numberline {5.3}Baseline technique for Range Search}{24}{section.5.3}
-\contentsline {section}{\numberline {5.4}A Pruning bound for binary fingerprints}{25}{section.5.4}
-\contentsline {section}{\numberline {5.5}Improvised Range Search technique}{27}{section.5.5}
-\contentsline {section}{\numberline {5.6}Extension to non-binary fingerprints}{28}{section.5.6}
-\contentsline {section}{\numberline {5.7}Using the Minimum Similarity Bound}{30}{section.5.7}
-\contentsline {section}{\numberline {5.8}Splitting Features}{30}{section.5.8}
+\contentsline {section}{\numberline {5.1}Indexing Process}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Point Query}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Range Query and K-nn}{24}{section.5.3}
+\contentsline {section}{\numberline {5.4}Baseline technique for Range Search}{24}{section.5.4}
+\contentsline {section}{\numberline {5.5}A Pruning bound for binary fingerprints}{24}{section.5.5}
+\contentsline {section}{\numberline {5.6}Improvised Range Search technique}{27}{section.5.6}
+\contentsline {section}{\numberline {5.7}Extension to non-binary fingerprints}{28}{section.5.7}
+\contentsline {section}{\numberline {5.8}Using the Minimum Similarity Bound}{30}{section.5.8}
+\contentsline {section}{\numberline {5.9}Splitting Features}{30}{section.5.9}
 \contentsline {chapter}{\numberline {6}Data}{32}{chapter.6}
 \contentsline {section}{\numberline {6.1}Experiment Data-sets}{32}{section.6.1}
 \contentsline {section}{\numberline {6.2}A Typical Fingerprint Data-set Analysis}{33}{section.6.2}

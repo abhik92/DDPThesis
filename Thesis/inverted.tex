@@ -1,5 +1,10 @@
 
-We construct the index structure on features. Our index structure is a chain hashing structure. For a give data point to be inserted in to the structure, for each of it features, we hash the feature and insert the reference to the data point in the chain. The motivation behind the use of an inverted index structure comes from the use of the tf-idf (term frequency-inverse document frequency) in text mining and information retrieval. Also chemical data is known to have an almost power law distribution for the presence of features in the data points and we wish to exploit this.
+We construct the index structure on features. The motivation behind the use of an inverted index structure comes from the use of the tf-idf (term frequency-inverse document frequency) in text mining and information retrieval. Also chemical data is known to have an almost power law distribution for the presence of features in the data points and we wish to exploit this.
+
+
+\section{Indexing Process}
+
+We have an inverted index on the features. For every feature we keep a hash table which stores a reference to every data containing the particular feature. Depending on the type (binary or non-binary) of the fingerprint, the indexing process might require pre-processing of the following values; for every feature $f_i$ belonging to the set of features seen in the database, a storage of the minimum and maximum number of features present in any point containing the particular feature $f_i$, minimum non-zero and maximum value taken by any point containing the feature $f_i$, as well as the minimum sum of feature values among all points containing the particular feature $f_i$.
 
 \section{Point Query}
 
@@ -9,6 +14,8 @@ Given a point $p$ we look at all its features, and find the list of all nodes as
 
 \section{Range Query and K-nn}
 Range query and K-nn are much more complicated queries, when compared to a point query. The candidate set in this case is much more diverse and distributed. For example the candidate set for a Range query will be the union of all the point lists associated with the features of $p$, which is the worst case is of the order of $N$. We try to prune this by observing that the minimum number of features in a point is 7, hence we can remove the top 6 features from the index with out affecting the accuracy of searching. But this pruning does not result in any improvement in performance. We shall discuss this further the sections below.\\
+
+
 
 \section{Baseline technique for Range Search}
 \label{sec:base}
