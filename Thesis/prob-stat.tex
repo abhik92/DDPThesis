@@ -7,7 +7,7 @@ We are looking at accurate searching of similar compounds when given a query com
 \begin{problem}{
 Range queries on a chemical data-set can be defined as the process where, when given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a threshold distance \textbf{$'\theta'$} and a database of chemical compounds $D$, we find the subset $S \subset D$ of all fingerprints, such that: \\
 \begin{equation}
-sim(f,g) < \theta ~~ \forall  \textbf{$g\in S$}
+ S= \{g~ |~ g \in D,sim(f,g) < \theta\}
 \end{equation}
 }
 \end{problem}
