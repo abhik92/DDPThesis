@@ -1,6 +1,9 @@
 
+In this chapter, we explain the M-tree data structure along with an unique indexing process which builds on the base structure of the metric tree. We explore an alternate indexing technique as well. Later we describe the range search query procedure in detail and study a dimensionality reduction technique to help overcome the high dimensionality and sparsity of the data-sets. \\
 
-M-tree also known as the Metric tree is a tree data structure constructed using a metric distance measure and relies on the triangle inequality for efficient range search queries. Similar to all other tree data structures, an M-tree data structure also has Leaf Nodes and non- Leaf nodes. Every non leaf node has a pointer to its parent node, a pointer to its sub-tree, its object information and a covering radius denoting maximum distance of a node to any node in its sub-tree.Every leaf node keeps a pointer to its parent and object information.\\
+
+\section{M-tree}
+M-tree, also known as the Metric tree is a tree data structure constructed using a metric distance measure, and which relies on the triangle inequality for efficient range search queries. Similar to other tree data structures, an M-tree data structure has Leaf Nodes and non-Leaf nodes. Every non-leaf node has a pointer to its parent node, a pointer to its sub-tree, its object information and a covering radius denoting maximum distance of a node to any node in its sub-tree. Every leaf node keeps a pointer to its parent and object information.\\
 
 The M-tree data structure compartments the objects into nodes, which define regions of the metric space. The maximum capacity of the M-tree is M. For each database object to be indexed, there is an entry $O_j = [ O_j, id(O_j), dist(O_j , P(O_j )) ]$
 in some leaf node.  $O_j$ stores the object information, mainly the data point feature values or dimension coordinates, id($O_j$) stores the id of the object and $dist(O_j , P(O_j ))$ stores the distance of it to its parent object. \\
@@ -12,14 +15,14 @@ in some leaf node.  $O_j$ stores the object information, mainly the data point f
 \label{fig:4.0}
 \end{figure}
 
-A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a sub-tree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a sub-tree rooted at router object $O_r$ is at at-most $r(O_r)$ distance to it $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
+A non-leaf node $O_r$ stores an object information as well as a covering radius $r(O_r)$ and a pointer to a sub-tree i.e. entry $O_r=[ O_r, ptr(T(O_r)), r(O_r), d(O_r, P(O_r)) ]$. One property satisfied is that every object $O_j$ stored in a sub-tree and rooted at router object $O_r$ is at at-most $r(O_r)$ distance to it i.e. $d(O_j , O_r) ≤ r(O_r)$. M-tree organizes the metric space into a set of, possibly overlapping, regions, to which the same principle is recursively applied.\\
 
 
 
 
-\section{Information in the data structure}
+\section{Information in our data structure}
 
-We use a modified data structure similar to the M-tree.We keep the following information in each node of the our modified M-tree: the object identifier of the pivot, i.e fingerprint information of the pivot fingerprint; the pivot also stores a pointer to its children i.e a pointer to a set of fingerprints; a double value which is the distance of the farthest child in its sub-tree and a boolean value which signifies if the pivot is an outlier pivot. We do not require a parent pointer. And the size of each node is determined by the number of pivots chosen at each step of our indexing technique and the base outlier size limit, which are explained later. The following information is stored in each entry of a node in our tree:
+We use a modified data structure of the M-tree. We record the following information in each node of the our modified M-tree: the object identifier of the pivot, i.e fingerprint information of the pivot fingerprint; the pivot also stores a pointer to its children i.e a pointer to a set of fingerprints; a double value which is the distance of the farthest child in its sub-tree and a boolean value which signifies if the pivot is an outlier pivot. We do not require a parent pointer. And the size of each node is determined by the number of pivots chosen at each step of our indexing technique and the base outlier size limit, which are explained later. To summarize, the following information is stored in each entry of a node in our tree:
 
 \begin{enumerate}
 	\item Object identifier $p_i$
@@ -29,7 +32,7 @@ We use a modified data structure similar to the M-tree.We keep the following inf
 \end{enumerate}
 
 \section{Baseline Indexing approach}
-In the baseline approach, we are partitioning the data-set into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
+In the baseline indexing approach, we are partitioning the data-set into groups using pivots which enables us to exploit the triangle inequality. The choice of pivots in the baseline approach is done randomly. The number of pivots is determined by two input parameters viz. the number of random pivots chosen at each step and the minimum size of the outlier set allowed at the lowest level. This has been formally explained in the algorithm below. \\
 
 \begin{figure}[ht]	
 \centering
@@ -46,69 +49,44 @@ In the baseline approach, we are partitioning the data-set into groups using piv
 \end{figure}
 \begin{enumerate}
 
-\item Choose the given number of random pivots from the set. The number of random pivots chosen at this step is a parameter to our experiment and has been varied across different values.
+\item Select the given number of random pivots (lets say $p$) from the database of chemical compounds. The number of random pivots selected in this step is a parameter to our experiment and has been varied across different values.
 
-\item After choosing pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots. A chemical compound is assigned to the pivot which is nearest in distance to it i.e. it has the highest Min-Max similarity with that as compared to other pivots . This is described in \autoref{fig:4.1}.
+\item After choosing pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots. A chemical compound is assigned to the pivot which is nearest to it i.e. the pivot with which it shares the highest Min-Max similarity. This is described in \autoref{fig:4.1}.
 
-\item The next step involves ranking all chemical compounds data points by their similarity to their own closest pivot. 
+\item The next step involves ranking all chemical compounds (which were assigned to a corresponding pivot) in order of their similarity to their closest pivot. 
 
-\item We calculate the median similarity among all the chemical compounds in this database and note it as the outlier cut-off/
+\item We compute the median similarity (each one to its closest pivot) among all the chemical compounds in this database and note it as the outlier cut-off.
 
-\item All the chemical compounds with similarity less than the cut-off similarity is called as outliers in this step
+\item All the chemical compounds with similarity less than the cut-off similarity are marked as outliers in this step.
 
-\item The outliers are unassigned from the pivots and assigned to the "outlier" pivot. This has been described in \autoref{fig:4.2}
+\item The outliers are unassigned from the respective pivot sets and assigned to the "outlier" pivot set. This has been described in \autoref{fig:4.2}.
 
-\item We recursively apply this technique on the outlier set until the outlier set size reaches a base limit which is also a parameter to our algorithm.\\
+\item We recursively apply this technique (from step 1 to step 6) on the outlier set until the outlier set size reaches a base limit ($o$), which is also a parameter to our algorithm. Once the size of the outlier set falls below $o$, we terminate this indexing process. \\
 
 \end{enumerate}
 
 
 \section{Alternate indexing approach}
 
-We tried an alternate approach where instead of choosing outliers after assigning molecules the most similar pivot we recursively apply the technique on each set. In simpler words, we try to cluster at each step and try to create clusters among each cluster recursively. So in each cluster we choose pivots again and try to assign each of the points to the pivots until we cannot choose more pivots. We can formally explain it as follows.
+We tried an alternate approach where instead of choosing outliers we recursively apply the technique of assigning a closest pivot on each set. In simpler words, we cluster at each step and try to create numerous clusters among each cluster recursively. In each cluster we choose pivots again and try to assign each of the points to the pivots until we cannot choose more pivots. We can formally explain it as follows.\\
 
 
 \begin{enumerate}
 
-\item Choose the given number of random pivots from the set. The number of random pivots chosen at this step is again a parameter to the experiment as previously.
+\item Select the given number of random pivots ($p$) from the set. The number of random pivots chosen at this step is again a parameter to the experiment as previously mentioned.
 
-\item The second step is also similar to the earlier indexing technique. After choosing pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots.
+\item The second step is similar to the earlier indexing technique. After selecting pivots we assign every other chemical compound in the database to one of the pivots based on the similarity to the pivots, just as before.
  
-\item Instead of choosing outliers now, we work with the same sets and recursively apply this technique on the set until the set size reaches a base limit .
+\item Instead of choosing outliers now, we work with the same sets and recursively apply this technique (steps 1 and 2) on the respective sets until the corresponding set sizes reaches a base limit .
 
-\item The set size limit is set as the number of pivots chosen at each step i.e. the method is applied recursively on the set until the size of the set is lower than the pivot set size making us unable to choose pivots. \\
+\item The set size limit ($o$) is fixed as the number of pivots chosen at each step ($p$) i.e. the method is applied recursively on the corresponding sets until the size of the set is lower than the pivot set size disabling us from selecting pivot sets. \\
 
 \end{enumerate}
 
-The previous indexing technique was seen to give us better results. Hence we will be using the earlier technique for all experimental evaluations. One reason we could think of why this technique failed is probably because the tree was becoming more imbalanced and the height was increasing causing querying time to be more.
+Through experiments conducted on the PubChem data-set (which will be described later), we concluded that our previous indexing technique was more effective than this indexing method. Hence we will be using the earlier technique for all experimental evaluations. A reason for this indexing technique failing to provide us with better results, is that the tree was becoming imbalanced, causing the height of the tree to increase as well as the querying time.
 
 
-
-\section{Choosing pivot}
-
-Instead of randomly choosing pivots at every step we use a Max-Min distance approach where we try to maximize the minimum distance between any two pivot nodes chosen. The procedure can be explained as below:
-
-\begin{enumerate}
-	\item Choose a random point.
-	\item The second point chosen is such that it is farthest from the first chosen random point. This will require a full database scan
-	\item The third point is chosen such that its minimum distance to either of the previous two pivots is maximized.
-	\item Iteratively, the $i^{th}$ point is chosen in a fashion such that the minimum of its distance to the previous i-1 points is maximized.
-	\item This procedure is repeated till we choose $p$ points where p is the number of pivots to be chosen	\\
-
-\end{enumerate} 
-
-We can observe that this is a very expensive procedure since we are scanning the entire database at every step. We need to compute an all pair similarity initially. At the $i^{th}$ step , the remaining n-i+1 points in  database need to compute its minimum distance to the i-1 points already present in pivot step. Finally choose the point among the n-i+1 points with the maximum distance. This computation is of the O($n^3$).\\
-	\begin{equation}
-	T(n)=  n^2 + \sum \limits_{i=1}^{n}( (n-i+1)(i-1)  + n-i+1) 
-	\end{equation}
-	\begin{equation}
-	T(n)=O(n^3)
-	\end{equation}
-
-We use a sampling technique where we randomly sample a subset of the database and apply the technique described above on the subset. We used a subset size of $\frac{1}{10^{th}}$ the size of the database, approximately about 20,000 points in the subset.
-
-
-\begin{figure}[ht!]	
+\begin{figure}[ht]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image0d.jpg}
 \caption{M-tree: Tree structure Step 1}
@@ -116,7 +94,7 @@ We use a sampling technique where we randomly sample a subset of the database an
 \end{figure}
 
 
-\begin{figure}[ht!]	
+\begin{figure}[ht]	
 \centering
 \includegraphics[width=1 \columnwidth]{img/image0e.jpg}
 \caption{M-tree: Tree structure - After final step}
@@ -125,25 +103,54 @@ We use a sampling technique where we randomly sample a subset of the database an
 
 
 
+\section{Selecting pivots in the indexing process}
+
+Instead of randomly selecting pivots at every step we use a Max-Min distance approach where we try to maximize the minimum distance between any two pivot nodes chosen. The idea is that the clusters (with the pivots as cluster centre), hence formed, would be spread out. The procedure can be explained as below:
+
+\begin{enumerate}
+	\item Select a random point.
+	\item The second point is selected in such a manner, that it is farthest from the point selected first. This will require a full database scan.
+	\item The third point is chosen such that its minimum distance to either of the previous two pivots is maximized.
+	\item This process continues. At the $i^{th}$ iteration, the $i^{th}$ pivot point is chosen in a fashion such that the minimum of its distance to the previous i-1 points is maximized.
+	\item This procedure is repeated till we choose $p$ points where $p$ is the number of pivots to be chosen.\\
+
+\end{enumerate} 
+
+We can observe that this is a very expensive procedure since we are scanning the entire database at every step. We would need to compute an all pair similarity initially. At the $i^{th}$ step, the remaining $n-i+1$ points in the database need to compute its minimum distance to the $i-1$ points already present in pivot step. Finally select the point among the $n-i+1$ points with the maximum computed distance. The computation complexity of this pivot selection method is of the order as shown below (Here $n$ is the size of the entire database and $p$ is the number of pivots to be chosen at each step of the indexing process):\\
+	\begin{equation}
+	T(n)=  n^2 + \sum \limits_{i=1}^{p}( (n-i+1)(i-1)  + n-i+1) 
+	\end{equation}
+	\begin{equation}
+	T(n)=O(n^2 + np^2)
+	\end{equation}
+
+We use a sampling technique where we randomly sample a subset of the database and apply the technique described above on the subset. We used a subset size of $\frac{1}{10^{th}}$ the size of the database (chosen empirically), with approximately about 20,000 points in the subset. Since we have a fixed set of points (let this number be k), our computation time complexity for selecting the pivots decreases as shown below: 
+
+	\begin{equation}
+	T(n)=  k^2 + \sum \limits_{i=1}^{p}( (k-i+1)(i-1)  + k-i+1) 
+	\end{equation}
+	\begin{equation}
+	T(n)=O(k^2 + kp^2)
+	\end{equation}
+
+
 
 \section{Range Search Querying}
 
-Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find the set of chemical fingerprints which satisfy the query. We exploit the triangle inequality for the same. The procedure for range search querying can be described by the following steps\\
+Given a query chemical fingerprint $q$ and a distance threshold $\theta$ we want to find the set of chemical fingerprints which satisfy the conditions of the range search query. We exploit the triangle inequality for the same. The basic idea is to be able to prune sub-trees based on the covering radius of the pivot of the sub-tree and the distance of the query to the pivot. The procedure for the range search querying can be described by the following steps:\\
 
 \begin{enumerate}
-	\item The basic idea is to be able to prune sub-trees based on the covering radius of the pivot of the sub-tree and the distance of the query to the pivot
-	 
-	\item Let the query fingerprint be q and the fingerprint pivot be $p_i$ of sub-tree $S_i$. We can calculate the maximum distance of any node in $S_i$ from q.We start with the root of the tree as $p_i$
+	\item Let the query fingerprint be $q$ and the fingerprint pivot be $p_i$ of sub-tree $S_i$. We can calculate the maximum distance of any node in $S_i$ from q.(We start with the root of the tree as $p_i$).
 	
 	\item Let the covering radius of pivot $p_i$ be $r_i$. Hence the maximum distance of any node in $S_i$ will be $dist(q,p_i)$ + $r_i$. Similarly the minimum distance of any node in $S_i$ is $max(dist(q,p_i)$ - $r_i, 0)$. 
 	
-	\item Hence we can calculate the range of the distance of any node in $S_i$ to q. 
+	\item Hence we can compute the range of the distance of any node in $S_i$ to q. 
 	
-	\item  If the upper bound of the range or the maximum distance is lesser than the threshold distance $\theta$ we can add all the nodes in $S_i$ to our resultant set
+	\item  If the upper bound of the range or the maximum distance is lesser than the threshold distance $\theta$, we can add all the nodes of the sub-tree $S_i$ to our resultant set.
 	
-	\item If the lower bound of the range is greater than the threshold distance $\theta$, we can prune the sub-tree $S_i$ since we can say with certainty that the distance of every node in the sub-tree $S_i$ is greater than  the threshold $\theta$.
+	\item If the lower bound of the range is greater than the threshold distance $\theta$, we can prune the sub-tree $S_i$, since we can say with certainty that the distance of every node in the sub-tree $S_i$ to the query point is greater than the threshold $\theta$.
 	
-	\item If there is an intersection in the intervals we recursively apply this technique on the second level of children in the sub-tree $S_i$ until we reach a leaf node.
+	\item If there is an intersection in the intervals we recursively apply this technique on the second level of children in the sub-tree $S_i$ until we reach a leaf node. We make each of the children of the root of the sub-tree $S_i$ as the new $p_i$ and repeat the steps in each of the corresponding sub-trees.
 	
 \end{enumerate}
 
@@ -151,19 +158,28 @@ Given a query chemical fingerprint $q$ and a threshold $\theta $ we want to find
 
 \section{Lipschitz Embedding}
 
-The performance of the M-tree is limited by the fact that the data is very sparse. This results in very loose clusters being formed during the indexing phase. To improve upon this we performed an embedding of the data into Euclidean space using Lipschitz embedding. Lipschitz embedding results in a contractive mapping.\\
+The performance of the M-tree is limited by the fact that the data is very sparse. This results in loose clusters being formed during the indexing phase. To improve upon this we performed a dimensionality reduction of the data into another space using Lipschitz embedding. Lipschitz embedding results in a contractive mapping. Let us define the basic terms before we can explain how to fit the embedding process into our indexing procedure.\\
 
+\begin{dfn}
+Embedding is the transformation from one space and distance function to another space and distance function. (The new space is generally a vector and the new distance function is, more often than not, Euclidean or some other $L_p$ norm distance function).
+\end{dfn}
+
+
+\begin{dfn}
 Lipschitz embedding is the embedding, or in simpler words, dimensionality reduction of the objects of
-a database D with metric distance d onto a k-dimensional feature vector space. The procedure goes as follows:\\
+a database D with metric distance d onto a k-dimensional feature vector space, as described in detail below.  
+\end{dfn}
+
+The Lipschitz embedding procedure can be formally explained as follows:\\
 \begin{enumerate}
-	\item Choose k subsets of D
-	\item Each subset $A_i$ is a reference set
-	\item Let the distance of object $p_j$ to set $A_i$ be:\\
+	\item Choose k subsets of D.
+	\item Each subset $A_i$ is a reference set.
+	\item Let the distance of object $p_j$ to set $A_i$ be defined as:\\
 	\begin{equation}
 	 d(p_j,A_i)= min_{a\epsilon A_{i}} d(p_j,a) 
 	\end{equation}
 
-	\item The feature vector f(o) is then defined as:\\
+	\item The new feature vector f($p_j$) i.e. the mapping of the object $p_j$ in the new space, is then defined as:\\
 	\begin{equation}
 	\label{lip1}
 	f(p_j)= {\frac{d(p_j,A_1)}{k},\frac{d(p_j,A_2)}{k}...\frac{d(p_j,A_k)}{k}} 
@@ -175,20 +191,20 @@ a database D with metric distance d onto a k-dimensional feature vector space. T
 	d'(f(p_j),f(p_k)) =\frac{1}{k} \sum \limits_{i=1}^{k} | d(p_j,A_i)-d(p_k,A_i)| 
 	\end{equation}
 
-	We notice that the new distance measure is the $L_1$ norm in the new space.
+	Note that the new distance measure is the $L_1$ norm in the new space.
 	
 	\begin{equation}
 	\label{eq:L1}
-	L_1(f(p_j),f(p_k)) ~~= \sum \limits_{i=1}^{k} | \frac{d(p_j,A_i)}{k}-\frac{d(p_k,A_i)}{k} | ~~=  \frac{1}{k} \sum \limits_{i=1}^{k} | d(p_j,A_i)-d(p_k,A_i)|  ~~= d'(f(p_j),f(p_k))
+	L_1(f(p_x),f(p_y)) ~~= \sum \limits_{i=1}^{k} | \frac{d(p_x,A_i)}{k}-\frac{d(p_y,A_i)}{k} | ~~=  \frac{1}{k} \sum \limits_{i=1}^{k} | d(p_x,A_i)-d(p_y,A_i)|  ~~= d'(f(p_x),f(p_y))
 	\end{equation}
 \end{enumerate}
 
 
 
-\begin{figure}[ht!]	
+\begin{figure}[ht]	
 \centering
-\includegraphics[width=0.4 \columnwidth]{img/lip.jpg}
-\caption{Lipschitz: Contractive mapping}
+\includegraphics[width=0.65 \columnwidth]{img/lip.jpg}
+\caption{Lipschitz: Contractive mapping reference diagram}
 \label{fig: lip}
 \end{figure}
 
@@ -243,33 +259,38 @@ Hence proved that Lipschitz embedding is a contractive mapping.
 \end{proof}
 
 \begin{thm}
-A Lipschitz embedding of the form $o_i \Rightarrow f(o_i)$ with $f(o_i)$ as defined in \autoref{lip1} and a new distance measure $d'$ as defined in \autoref{lip2} ensures that the new distance measure $d'$ is a metric in the new space.
+A Lipschitz embedding of the form $o_i \Rightarrow f(o_i)$ with $f(o_i)$ as defined in \autoref{lip1} and a new distance measure $d'$ as defined in \autoref{lip2} ensures that $d'$ is a metric in the new space.
 \end{thm}
 
 \begin{proof}
 We have already shown from \autoref{eq:L1} that $d'$ is equivalent to the $L_1$ norm in the new space. Since we know that $L_1$ norm is a metric, it follows the new distance measure $d'$ is also metric in the new space.
 \end{proof}
 
-We have chosen the reference sets in our embedding procedure as singleton sets. The choice of these points is done such that they are maximally far apart, i.e., the average and minimum all pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the heuristic that farthest point will be maximally representative of the data-set. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
+
+
+\section{Using Lipschitz Embedding for Range Search }
+
+We have chosen singleton sets as the reference sets in our embedding process for simplicity and to reduce computation. The choice of these points is done such that they are maximally far apart, i.e., the minimum all-pairs distance among the reference sets is maximized similar to the method of choosing pivots in our indexing technique. This criteria of selecting the sets was based on the idea that farthest points can be used as a more ideal representative of the data-set, rather than points close together. Since choice of such an optimal set is NP-hard, we perform a randomized set construction.\\
 
 \begin{enumerate}
-	\item Choose a random pivot from a sampled set of  data set points
+	\item Select a random pivot from a sampled set of  data set points.
 
-	\item Add the point to our Reference set
+	\item Add the point to our Reference set.
 
-	\item Find the point farthest from the reference set from the sampled set of points
+	\item Find the point farthest from the reference set from the sampled set of points (based on the criteria explained above, of having the largest minimum distance to the already selected reference sets).
 
-	\item Add the point to the reference set
+	\item Add the point to the reference set.
 
 	\item Repeat step 3-4 until Reference set is full\\
 \end{enumerate}
 
 
-Using Lipschitz embedding we propose the following indexing and range search process:
+Using Lipschitz embedding we propose the following indexing and range search process:\\
 \begin{enumerate}
 	\item Embed the data-set using Lipschitz embedding and the pivoting method described above.
 	\item Follow the M-tree based indexing process but in this new embedded space.
-	\item Carry out the range search to compute the candidate set.  Since from Theorem \autoref{th0}, we know that Lipschitz is contractive we are assured to have our candidate set as a super set of the actual range search result .
-	\item We know undergo a similarity computation of all the points in the candidate set to the query in the original space to verify if the candidate point is not a false positive.
+	\item Carry out the range search to compute the candidate set.  Since from \hyperref[th0]{Theorem 1}, we know that Lipschitz is contractive we are assured to have our candidate set as a super set of the actual range search result .
+	\item We do a similarity computation of all the points in the candidate set to the query, in the original space, to verify if the candidate point is not a false positive.
 \end{enumerate}
-Our performance had deteriorated from that of the baseline technique. This is probably because the candidate set which we compute in step 3 is very large and we end up computing similarity for a lot of false positives.
+
+Through experiments performed on the PubChem dataset (which will be described later), we observed that our performance had deteriorated from that of the baseline technique. This is because the candidate set, which we compute in step 3 is very large, causing us to do a lot of unnecessary similarity computation.

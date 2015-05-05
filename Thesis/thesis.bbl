@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -29,6 +29,14 @@
 \newblock {\em Journal of chemical information and modeling\/}, {\bf 47}(6),
   2098--2109.
 
+\bibitem[{Bolton {\em et~al.\/}(2008)Bolton, Wang, Thiessen, and
+  Bryant}]{bolton2008pubchem}
+{\bf Bolton, E.~E.}, {\bf Y.~Wang}, {\bf P.~A. Thiessen}, and {\bf S.~H.
+  Bryant} (2008).
+\newblock Pubchem: integrated platform of small molecules and biological
+  activities.
+\newblock {\em Annual reports in computational chemistry\/}, {\bf 4}, 217--241.
+
 \bibitem[{Ciaccia and Patella(2002)}]{ciaccia2002searching}
 {\bf Ciaccia, P.} and {\bf M.~Patella} (2002).
 \newblock Searching in metric spaces with user-defined and approximate
@@ -48,6 +56,12 @@
 \newblock A modification of the jaccard--tanimoto similarity index for diverse
   selection of chemical compounds using binary strings.
 \newblock {\em Technometrics\/}, {\bf 44}(2), 110--119.
+
+\bibitem[{Huang {\em et~al.\/}(2006)Huang, Shoichet, and
+  Irwin}]{huang2006benchmarking}
+{\bf Huang, N.}, {\bf B.~K. Shoichet}, and {\bf J.~J. Irwin} (2006).
+\newblock Benchmarking sets for molecular docking.
+\newblock {\em Journal of medicinal chemistry\/}, {\bf 49}(23), 6789--6801.
 
 \bibitem[{James {\em et~al.\/}(2007)James, Weininger, and
   Delany}]{james2007daylight}

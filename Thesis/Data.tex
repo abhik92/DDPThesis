@@ -2,11 +2,11 @@ Before we get to the experiments, we will describe the data in this chapter. To 
 
 \section{Experiment Data-sets}
 
-The two real world data-sets we have explored in this work are from PubChem and DUD. PubChem is a database of chemical compounds and a record of their activities and reactions against agents. It is maintained National Center for Biotechnology Information (NCBI), a component of the National Library of Medicine, which is part of the United States National Institutes of Health (NIH). We have taken a subset of compounds from their database for our experiments. We are using both binary and non-binary fingerprints which have been created using fingerprinting techniques applied on the chemical compound data from their databases. DUD is a directory of useful decoys for bench-marking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially available compounds. 
+The two real world data-sets we have explored in this work are from PubChem and DUD. PubChem is a public database of chemical compounds and a record of their activities and reactions against agents. It is maintained by the National Center for Biotechnology Information (NCBI), a component of the National Library of Medicine, which is part of the United States National Institutes of Health (NIH). We have taken a subset of compounds from their database for our experiments. We are using both binary and non-binary fingerprints which have been created using fingerprinting techniques applied on the chemical compound data from their databases. DUD is a directory of useful decoys for bench-marking virtual screening. DUD is provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF). DUD is derived from ZINC, a database of commercially available compounds. 
 
 MOL2 is the primary molecule format used for the representation of chemical compounds. The MOL2 file displays information specifically about the following, Atom, Molecule, Bond, Substructure and Set. The atom record provides information about the atom names, types, coordinates, and partial charges. The molecule entry recognizes information about the molecule name and number of atoms, bonds, substructures and sets. Similarly the bond information displays the atom identifiers for every bond and the substructure record identifies types of significant substructures seen.To extract fingerprints we have used MOLPRINT2D, a molecular fingerprinting technique.
 
-We will referring to the binary and non-binary versions of the PubChem data-sets as PubChem-b and PubChem-n respectively.
+We will be referring to the binary and non-binary versions of the PubChem data-sets as PubChem-b and PubChem-n respectively.
 
 
 
@@ -43,34 +43,34 @@ From this we can observe that the data is highly sparse with only about 271 feat
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/all.jpg}
-\caption{Data Analysis: All pair distances}
+\caption{Data Analysis: All pair distances, plotted as number of pairs of points against the distance score between the points}
 \end{figure}
 %\pagebreak
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/min.jpg}
-\caption{Data Analysis: Distance of the closest point}
+\caption{Data Analysis: Distance of the closest point, plotted as number of occurrences of the nearest neighbour distance against the distance score}
 \end{figure}
 
 \begin{figure}[ht!]	
 \centering
 \includegraphics[width=0.7 \columnwidth]{img/feature.jpg}
-\caption{Data Analysis: Feature distribution}
+\caption{Data Analysis: Feature distribution, plotted as the number of features against the number of occurrences of the feature in all data points}
 \end{figure}
 
 
 \section{Observations on the Data}
 
-We can observe from the data is that them being in high dimension, the points are very much spread out, and hence most of them are equidistant from each other.
+We can observe from the data being in high dimension, that the points are spread out, and hence most of them are equidistant from each other.
 The closest point for most of the points is at distance much greater than 0.4. in fact only 0.007\% of the points have their 1-NN within a distance of 0.4.
 
 The distribution of features among the data points seem to follow a power law distribution (though we have not tried to regress the plot to a function, this is commonly assumed for chemical data)  i.e., even though we have many features only a hand full of them are repeated in most of the points.
 
-One of the most time consuming operations in our algorithms has been the recurring theme of finding the set of maximally separated points, which we called as pivots. It takes hours for the algorithm to converge. Given the distribution of all pairs distance, we cannot hope to improve it further, but we can propose an heuristic streaming algorithm to handle it efficiently (not explored in this work).
+One of the most time consuming operations in our algorithms has been the recurring theme of finding the set of maximally separated points, which we called as pivots. It takes hours for the algorithm to converge. Given the distribution of all pairs distance, we cannot hope to improve it further, but we could look into heuristic streaming algorithms to handle it efficiently (not explored in this work).
 
 We can maintain a list of most frequently occurring farthest points. These points are not necessarily the points farthest from each other, but the points which are most frequent in the list farthest points, for each point. This is motivated from the frequency counting problem from streaming as shown in \citet*{metwally2005efficient}.
 
-We observed that the baseline inverted index we proposed for point queries could not be easily generalized  to range queries. This can be further observed from the fact that how skewed the data distribution is. Given that only 0.007\% of the 1-nn points have distance less that 0.4, we can never achieve a efficient pruning. And in addition the distribution of heavy-hitters (features with occurrence more that 50000) is also very high, We have on an average 44 heavy hitters in a data point. Hence, in the worst case, we will be forced to explore all the points.
+We observed that the baseline inverted index we proposed for point queries could not be easily generalized  to range queries. This can be further observed from the fact that how skewed the data distribution is. Given that only 0.007\% of the 1-nn points have distance less that 0.4, we can never achieve a efficient pruning. And in addition the distribution of heavy-hitters (features with occurrence more that 50000) is also very high. We have on an average 44 heavy hitters in a data point. Hence, in the worst case, we will be forced to explore all the points.
 
-The success of any embedding technique, especially Lipschitz, depends on the ability of the reference set to be representative of the entire data. in our case, given that the entire data is very widely spread, the number of reference set required to well represent the data, becomes very large. This is the reason why Lipschitz did not give the desired results.
+The success of any embedding technique, especially Lipschitz, depends on the ability of the reference set to be representative of the entire data. In our case, given that the entire data is very widely spread, the number of reference set required to well represent the data, becomes very large. This is the reason why Lipschitz did not give the desired results.
 
