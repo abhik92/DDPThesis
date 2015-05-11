@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.15)  10 MAY 2015 22:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.14)  11 MAY 2015 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,183 +889,247 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 ] [10
 
-] [11
-
-] [12
-
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 174.
+<img/fng1.jpg, id=336, 266.9975pt x 257.96375pt>
+File: img/fng1.jpg Graphic file (type jpg)
+ <use img/fng1.jpg>
+Package pdftex.def Info: img/fng1.jpg used on input line 178.
+(pdftex.def)             Requested size: 51.3422pt x 49.60405pt.
+
+<img/fng2.jpg, id=337, 739.76375pt x 460.72125pt>
+File: img/fng2.jpg Graphic file (type jpg)
+ <use img/fng2.jpg>
+Package pdftex.def Info: img/fng2.jpg used on input line 178.
+(pdftex.def)             Requested size: 136.91603pt x 85.26724pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 178.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 174.
+LaTeX Font Info:    Try loading font information for U+msb on input line 178.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [13
+) [11
 
-] [14
+ <./img/fng1.jpg> <./img/fng2.jpg>]
+File: img/fng1.jpg Graphic file (type jpg)
+ <use img/fng1.jpg>
+Package pdftex.def Info: img/fng1.jpg used on input line 178.
+(pdftex.def)             Requested size: 51.3422pt x 49.60405pt.
+File: img/fng2.jpg Graphic file (type jpg)
+ <use img/fng2.jpg>
+Package pdftex.def Info: img/fng2.jpg used on input line 178.
+(pdftex.def)             Requested size: 136.91603pt x 85.26724pt.
+ [12
+
+]
+File: img/fng1.jpg Graphic file (type jpg)
+
+<use img/fng1.jpg>
+Package pdftex.def Info: img/fng1.jpg used on input line 178.
+(pdftex.def)             Requested size: 51.3422pt x 49.60405pt.
+File: img/fng2.jpg Graphic file (type jpg)
+ <use img/fng2.jpg>
+Package pdftex.def Info: img/fng2.jpg used on input line 178.
+(pdftex.def)             Requested size: 136.91603pt x 85.26724pt.
+ [13
+
+]
+File: img/fng1.jpg Graphic file (type jpg)
+ <use img/fng1.jpg>
+Package pdftex.def Info: img/fng1.jpg used on input line 178.
+(pdftex.def)             Requested size: 51.3422pt x 49.60405pt.
+File: img/fng2.jpg Graphic file (type jpg)
+
+<use img/fng2.jpg>
+Package pdftex.def Info: img/fng2.jpg used on input line 178.
+(pdftex.def)             Requested size: 136.91603pt x 85.26724pt.
+ [14
 
 ] [15
 
-]
-[16
+] [16
 
-] <img/mtree.jpg, id=494, 963.6pt x 722.7pt>
-File: img/mtree.jpg Graphic file (type jpg)
- <use img/mtree.jpg>
-Package pdftex.def Info: img/mtree.jpg used on input line 229.
-(pdftex.def)             Requested size: 188.26346pt x 141.1961pt.
+] [17
 
-Overfull \vbox (2.20906pt too high) detected at line 229
- []
-
-[17
-
- <./img/mtree.jpg>]
-File: img/mtree.jpg Graphic file (type jpg)
- <use img/mtree.jpg>
-Package pdftex.def Info: img/mtree.jpg used on input line 229.
-(pdftex.def)             Requested size: 188.26346pt x 141.1961pt.
-
-Overfull \vbox (2.20906pt too high) detected at line 229
- []
-
-[18
+] [18
 
 ] [19
 
 ] [20
 
-] <img/image0a.jpg, id=605, 833.1125pt x 618.31pt>
+] [21
+
+]
+<img/mtree.jpg, id=636, 963.6pt x 722.7pt>
+File: img/mtree.jpg Graphic file (type jpg)
+ <use img/mtree.jpg>
+Package pdftex.def Info: img/mtree.jpg used on input line 265.
+(pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
+
+Overfull \vbox (4.8381pt too high) detected at line 265
+ []
+
+[22
+
+ <./img/mtree.jpg>]
+File: img/mtree.jpg Graphic file (type jpg)
+ <use img/mtree.jpg>
+Package pdftex.def Info: img/mtree.jpg used on input line 265.
+(pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
+
+Overfull \vbox (4.8381pt too high) detected at line 265
+ []
+
+[23
+
+]
+File: img/mtree.jpg Graphic file (type jpg)
+ <use img/mtree.jpg>
+Package pdftex.def Info: img/mtree.jpg used on input line 265.
+(pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
+
+Overfull \vbox (4.8381pt too high) detected at line 265
+ []
+
+[24
+
+] [25
+
+] [26
+
+] <img/image0a.jpg, id=773, 833.1125pt x 618.31pt>
 File: img/image0a.jpg Graphic file (type jpg)
 
 <use img/image0a.jpg>
-Package pdftex.def Info: img/image0a.jpg used on input line 248.
+Package pdftex.def Info: img/image0a.jpg used on input line 284.
 (pdftex.def)             Requested size: 171.14764pt x 127.01854pt.
- [21
+ [27
 
  <./img/image0a.jpg>]
 File: img/image0a.jpg Graphic file (type jpg)
  <use img/image0a.jpg>
-Package pdftex.def Info: img/image0a.jpg used on input line 248.
+Package pdftex.def Info: img/image0a.jpg used on input line 284.
 (pdftex.def)             Requested size: 171.14764pt x 127.01854pt.
- [22
+ [28
 
 ]
-[23
+[29
 
-] <img/image0b.jpg, id=684, 819.06pt x 614.295pt>
+] [30
+
+] <img/image0b.jpg, id=878, 819.06pt x 614.295pt>
 File: img/image0b.jpg Graphic file (type jpg)
- <use img/image0b.jpg>
-Package pdftex.def Info: img/image0b.jpg used on input line 265.
+
+<use img/image0b.jpg>
+Package pdftex.def Info: img/image0b.jpg used on input line 304.
 (pdftex.def)             Requested size: 171.14764pt x 128.359pt.
+ [31
 
-[24
+ <./img/image0b.jpg>] [32
 
- <./img/image0b.jpg>] [25
-
-] <img/image0e.jpg, id=738, 963.6pt x 722.7pt>
+]
+<img/image0e.jpg, id=933, 963.6pt x 722.7pt>
 File: img/image0e.jpg Graphic file (type jpg)
-
-<use img/image0e.jpg>
-Package pdftex.def Info: img/image0e.jpg used on input line 283.
+ <use img/image0e.jpg>
+Package pdftex.def Info: img/image0e.jpg used on input line 322.
 (pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
- [26
+ [33
 
  <./img/image0e.jpg>]
 File: img/image0e.jpg Graphic file (type jpg)
  <use img/image0e.jpg>
-Package pdftex.def Info: img/image0e.jpg used on input line 283.
+Package pdftex.def Info: img/image0e.jpg used on input line 322.
 (pdftex.def)             Requested size: 205.37926pt x 154.0321pt.
- [27
-
-]
-[28
-
-] <img/feature.jpg, id=816, 481.8pt x 361.35pt>
-File: img/feature.jpg Graphic file (type jpg)
- <use img/feature.jpg>
-Package pdftex.def Info: img/feature.jpg used on input line 320.
-(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-
-[29
-
- <./img/feature.jpg>] <img/image0c.jpg, id=844, 963.6pt x 722.7pt>
-File: img/image0c.jpg Graphic file (type jpg)
-
-<use img/image0c.jpg>
-Package pdftex.def Info: img/image0c.jpg used on input line 343.
-(pdftex.def)             Requested size: 256.72147pt x 192.54015pt.
- [30
-
- <./img/image0c.jpg>]
-<img/image0c1.jpg, id=871, 963.6pt x 722.7pt>
-File: img/image0c1.jpg Graphic file (type jpg)
- <use img/image0c1.jpg>
-Package pdftex.def Info: img/image0c1.jpg used on input line 359.
-(pdftex.def)             Requested size: 256.72147pt x 192.54015pt.
- [31
-
- <./img/image0c1.jpg>] [32
-
-] [33
-
-] [34
+ [34
 
 ] [35
 
-] [36
-
-] [37
-
 ]
-<img/image5.jpg, id=1062, 607.26875pt x 341.275pt>
-File: img/image5.jpg Graphic file (type jpg)
- <use img/image5.jpg>
-Package pdftex.def Info: img/image5.jpg used on input line 492.
-(pdftex.def)             Requested size: 256.72147pt x 144.27705pt.
+<img/feature.jpg, id=1010, 481.8pt x 361.35pt>
+File: img/feature.jpg Graphic file (type jpg)
+ <use img/feature.jpg>
+Package pdftex.def Info: img/feature.jpg used on input line 359.
+(pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
+ [36
 
-[38
+ <./img/feature.jpg>] <img/image0c.jpg, id=1037, 963.6pt x 722.7pt>
+File: img/image0c.jpg Graphic file (type jpg)
 
- <./img/image5.jpg>] [39
+<use img/image0c.jpg>
+Package pdftex.def Info: img/image0c.jpg used on input line 382.
+(pdftex.def)             Requested size: 256.72147pt x 192.54015pt.
+ [37
+
+ <./img/image0c.jpg>]
+<img/image0c1.jpg, id=1065, 963.6pt x 722.7pt>
+File: img/image0c1.jpg Graphic file (type jpg)
+ <use img/image0c1.jpg>
+Package pdftex.def Info: img/image0c1.jpg used on input line 398.
+(pdftex.def)             Requested size: 256.72147pt x 192.54015pt.
+ [38
+
+ <./img/image0c1.jpg>] [39
 
 ] [40
 
-]
-<img/imageC1.jpg, id=1142, 715.67375pt x 507.8975pt>
-File: img/imageC1.jpg Graphic file (type jpg)
- <use img/imageC1.jpg>
-Package pdftex.def Info: img/imageC1.jpg used on input line 510.
-(pdftex.def)             Requested size: 256.72147pt x 182.19197pt.
+] [41
 
-[41
+] [42
 
- <./img/imageC1.jpg>] <img/imageC2.jpg, id=1168, 721.69624pt x 513.92pt>
-File: img/imageC2.jpg Graphic file (type jpg)
+] [43
 
-<use img/imageC2.jpg>
-Package pdftex.def Info: img/imageC2.jpg used on input line 519.
-(pdftex.def)             Requested size: 256.72147pt x 182.80751pt.
- [42
-
- <./img/imageC2.jpg>]
-<img/imageC3.jpg, id=1194, 712.6625pt x 505.89pt>
-File: img/imageC3.jpg Graphic file (type jpg)
- <use img/imageC3.jpg>
-Package pdftex.def Info: img/imageC3.jpg used on input line 528.
-(pdftex.def)             Requested size: 256.72147pt x 182.23604pt.
-
-[43
-
- <./img/imageC3.jpg>] [44
+] [44
 
 ] [45
 
-] [46
+]
+<img/image5.jpg, id=1280, 607.26875pt x 341.275pt>
+File: img/image5.jpg Graphic file (type jpg)
+ <use img/image5.jpg>
+Package pdftex.def Info: img/image5.jpg used on input line 532.
+(pdftex.def)             Requested size: 256.72147pt x 144.27705pt.
 
-] [47
+[46
+
+ <./img/image5.jpg>] [47
+
+] [48
+
+]
+<img/imageC1.jpg, id=1359, 715.67375pt x 507.8975pt>
+File: img/imageC1.jpg Graphic file (type jpg)
+ <use img/imageC1.jpg>
+Package pdftex.def Info: img/imageC1.jpg used on input line 550.
+(pdftex.def)             Requested size: 256.72147pt x 182.19197pt.
+
+[49
+
+ <./img/imageC1.jpg>] <img/imageC2.jpg, id=1387, 721.69624pt x 513.92pt>
+File: img/imageC2.jpg Graphic file (type jpg)
+
+<use img/imageC2.jpg>
+Package pdftex.def Info: img/imageC2.jpg used on input line 559.
+(pdftex.def)             Requested size: 256.72147pt x 182.80751pt.
+ [50
+
+ <./img/imageC2.jpg>]
+<img/imageC3.jpg, id=1413, 712.6625pt x 505.89pt>
+File: img/imageC3.jpg Graphic file (type jpg)
+ <use img/imageC3.jpg>
+Package pdftex.def Info: img/imageC3.jpg used on input line 568.
+(pdftex.def)             Requested size: 256.72147pt x 182.23604pt.
+
+[51
+
+ <./img/imageC3.jpg>] [52
+
+] [53
+
+] [54
+
+] [55
 
 ]
 \tf@nav=\write6
@@ -1077,56 +1141,44 @@ Package pdftex.def Info: img/imageC3.jpg used on input line 528.
 \tf@snm=\write8
 \openout8 = `present.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 547.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 547.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
  (./present.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 547.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 547.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 587.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
+Package rerunfilecheck Info: File `present.out' has not changed.
+(rerunfilecheck)             Checksum: 78E8CA8A6B453C8726A8C067C32F6B70;383.
 
-
-Package rerunfilecheck Warning: File `present.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `present.out':
-(rerunfilecheck)             Before: DB2DBDE04712FA01F95F215519829494;332
-(rerunfilecheck)             After:  68C67A06EEC203A4A3E9DB74C936F2AD;332.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 547.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
  ) 
 Here is how much of TeX's memory you used:
- 16089 strings out of 494985
- 299047 string characters out of 6180356
+ 16123 strings out of 494985
+ 299412 string characters out of 6180356
  366541 words of memory out of 5000000
- 18800 multiletter control sequences out of 15000+600000
+ 18816 multiletter control sequences out of 15000+600000
  16424 words of font info for 61 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,16n,62p,484b,732s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Outline0.2.2.28} has been referenced but does not
- exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb>
-Output written on present.pdf (47 pages, 729022 bytes).
+ 49i,16n,62p,484b,677s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb>
+Output written on present.pdf (55 pages, 773945 bytes).
 PDF statistics:
- 1391 PDF objects out of 1440 (max. 8388607)
- 1292 compressed objects within 13 object streams
- 104 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1613 PDF objects out of 1728 (max. 8388607)
+ 1501 compressed objects within 16 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,8 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Motivation}{3}{0}{1}
-\beamer@sectionintoc {2}{Problem Statement}{13}{0}{2}
-\beamer@subsectionintoc {2}{1}{M-tree based index}{17}{0}{2}
-\beamer@subsectionintoc {2}{2}{Inverted Index}{29}{0}{2}
-\beamer@sectionintoc {3}{Experiments and Results}{35}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{44}{0}{4}
+\beamer@sectionintoc {2}{Problem Statement}{18}{0}{2}
+\beamer@sectionintoc {3}{Our Contribution}{22}{0}{3}
+\beamer@subsectionintoc {3}{1}{M-tree based index}{22}{0}{3}
+\beamer@subsectionintoc {3}{2}{Inverted Index}{36}{0}{3}
+\beamer@sectionintoc {4}{Experiments and Results}{43}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{52}{0}{5}

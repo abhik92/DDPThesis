@@ -121,42 +121,79 @@ Project Guide: Dr. Sayan Ranu
 	\item<1-> Fast database search is vital in drug discovery, where the aim is identifying chemical compounds with high similarity to known drugs.
 
 
-	\item<2-> Why is a similarity search important?
-		
-	\item<3->[] ZINC database contains over 35 million purchasable compounds.	
+	\item<2->  ZINC database contains over 35 million purchasable compounds.	
 % Note: Other applications include, biological reactivity, reaction site modelling.
 
-	\item<4->  Exact Search?
-	
-	\item<5->[] Not looking for approximation methods. For example, Locally Sensitive Hashing.
+
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{Motivation ...}
+
+\begin{itemize}
+
+	\item<1-> Why is a similarity search important?
+% Note: Other applications include, biological reactivity, reaction site modelling.
+	\begin{itemize}
+		\item<2-> Suppose a company wants to sell drugs, patented by another company.
+		\item<3-> Another scenario is when a drug has side effects and an alternative is required.			
+	\end{itemize}
+	\item<4->  Exact Search?
+	\begin{itemize}
+	\item<5-> Billions of dollars are spent for experiments on a single drug.
+	\item<6-> Not looking for approximation methods like Locally Sensitive Hashing.
+	\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Challenges}
+\frametitle{Chemical Compounds}
 
 \begin{itemize}
 	\item<1-> Representation of molecules? Sub-graph Isomorphism is NP-complete. Solution? 
 \begin{itemize}
 	\item<2->[] Fingerprint. 	
 \end{itemize}
-	\item<3-> High dimensionality and sparseness of data.
+
+	\item<3->[]
+	\begin{figure}[ht]	
+	\centering
+	\includegraphics[width=0.15\columnwidth]	{img/fng1.jpg}
+\end{figure}
+
+	\item<4->[]
+	\begin{figure}[ht]	
+	\centering
+	\includegraphics[width=0.4\columnwidth]	{img/fng2.jpg}
+\caption{Fingerprint construction \footnote{\textbf{Source} : http://icep.wikispaces.com}}
+\end{figure}	
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Challenges}
+
+\begin{itemize}
+	\item<1-> High dimensionality and sparseness of data.
 \begin{itemize}	
-	\item<4->[] Eg. Statistics of the PubChem dataset we have used:\\
+	\item<2->[] Eg. Statistics of the PubChem dataset we have used:\\
 	Number of data points : 264016 \\ 
 	Number of unique features : 785985 \\ 
 	Average number of features in a data point : 270.602966 \\ 
 \end{itemize}
 
-	\item<5-> But why index?
+	\item<3-> But why index?
 	
 \end{itemize}
 
 \end{frame}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Problem Statement}
@@ -191,7 +228,7 @@ Given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a th
 \end{frame}
 
 %
-%\section{Our Contribution}
+\section{Our Contribution}
 %
 %\begin{frame}
 %\frametitle{Contribution}
@@ -216,14 +253,13 @@ Given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a th
 \begin{itemize}
 	\item<1-> Routing objects 
 	\item<1-> Covering radius
-	
 \item<2->[]
 \begin{figure}[ht]	
 \centering
-\includegraphics[width=0.55 \columnwidth]{img/mtree.jpg}
-\caption{M-tree Structure Overview}
+\includegraphics[width=0.6 \columnwidth]{img/mtree.jpg}
 \end{figure}
-	
+	\item<3-> Max: $|dist(Q,RO_{i}) + CR_i|$, Min: $|dist(Q,RO_{i}) - CR_i|$	
+	%\item<4-> Min. distance : $|dist(Q,RO_{i}) - CR_i|$
 \end{itemize}
 \end{overlayarea}
 \end{frame}
@@ -253,11 +289,14 @@ Given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a th
 \begin{overlayarea}{\textwidth}{.8\textheight}
 \begin{itemize}
 	\item<1-> Choose outliers ?	
-	\item<2->[] 
+	\begin{itemize}
+		\item<2-> Those points whose similarity to closest pivot is below median similarity.		
+	\end{itemize}
+	\item<3->[] 
 \begin{figure}
 
 \centering
-\includegraphics<2->[width=0.5 \columnwidth]{img/image0b.jpg}
+\includegraphics<3->[width=0.5 \columnwidth]{img/image0b.jpg}
 \end{figure}
 
 \end{itemize}
@@ -394,8 +433,9 @@ Given a fingerprint, say \textit{'f'}, a similarity measure \textit{'sim'}, a th
 \frametitle{Greedy Technique}
 
 \begin{itemize}
-	\item<1-> Sort the features based on popularity
-	\item<2-> Hence if till the $i^{th}$ feature is considered, if j features (call it set $R$) have been pruned till now, we can prune the $i^{th}$ feature as well if the following holds.
+	\item<1-> Sort the features based on popularity.
+	\item<2-> Start from the most popular feature.	
+	\item<3-> If till the $i^{th}$ feature is considered, if j features (call it set $R$) have been pruned till now, we can prune the $i^{th}$ feature as well if the following holds.
 	\begin{equation}
 	\label{eq: greedy}
 	\frac{j+1}{N_q - 1 + min(V_{i}, \rho)} < 1-t 
@@ -430,8 +470,8 @@ Here $j_i$ is the maximum feature value taken for the feature $f_i$,\\  $W_i$ is
 
 \item<1-> Evaluations
 \begin{itemize}
-	\item Compare range search result with that of full database scan
-	\item Compare average runtime of range search with the Bit bound technique 
+	\item Compared range search result with that of full database scan.
+	\item Compared average run-times of range search with the state of the art Bit-bound technique 
 \footnote{\textbf{Source:} Swamidass, S Joshua and Baldi, Pierre. \textit{Bounds and algorithms for fast exact searches of chemical fingerprints in linear and sublinear time.}} 
 \end{itemize} 
 \end{itemize}
@@ -532,7 +572,7 @@ Here $j_i$ is the maximum feature value taken for the feature $f_i$,\\  $W_i$ is
 \frametitle{Conclusion}
 \begin{itemize}
 	\item<1-> Proposed an M-tree based index approach which achieved 2-3 times speed-up over the Bit-Bound Technique. 
-	\item<2-> Proposed a novel inverted indexing technique which achieved 5-6 times speed-up over the Bit-Bound Technique.
+	\item<2-> Proposed a novel Inverted Indexing technique which achieved 5-6 times speed-up over the Bit-Bound Technique.
 	\item<3-> Showed the effectiveness of our techniques through comprehensive analysis on 2 real world datasets (both binary and non-binary).
 \end{itemize}
 
